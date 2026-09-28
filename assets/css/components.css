@@ -950,15 +950,20 @@
 .contact-links a, .contact-return {
   display: inline-flex;
   align-items: center;
-  gap: 18px;
-  border-bottom: 1px solid #91c8ba;
-  padding: 9px 0;
-  font-size: 14px;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid #91c8ba;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: 650;
   color: #e6faf3;
+  transition: all 0.2s;
 }
 .contact-links a:hover, .contact-return:hover {
-  color: white;
-  border-color: white;
+  background: #e6faf3;
+  color: #113f47;
+  transform: translateY(-2px);
 }
 .contact-card::after {
   content: '';

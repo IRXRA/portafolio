@@ -6,8 +6,7 @@
 export const contact = Object.freeze({
   email: 'raul.guzman.manriquez@gmail.com',
   linkedin: 'https://www.linkedin.com/in/raúl-guzmán-cl/',
-  phoneDisplay: '+56 9 7830 4302',
-  phoneHref: '+56978304302',
+  whatsapp: 'https://wa.me/56978304302',
 });
 
 export const stages = Object.freeze([
