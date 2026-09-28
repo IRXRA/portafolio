@@ -990,3 +990,117 @@
 .footer a:hover {
   text-decoration: underline;
 }
+
+/* Contacto profesional y formulario compatible con hosting estático. */
+.contact-form-panel {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: .78fr 1.22fr;
+  gap: 34px;
+  padding-top: 34px;
+  border-top: 1px solid #568087;
+}
+.contact-form-heading strong {
+  display: block;
+  font: 400 27px/1.25 var(--serif);
+  color: white;
+}
+.contact-form-heading p {
+  margin: 12px 0 0;
+  font-size: 14px;
+}
+.contact-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.form-field-wide {
+  grid-column: 1 / -1;
+}
+.form-field label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .035em;
+  color: #d9eee8;
+}
+.form-field label span {
+  font-weight: 400;
+  color: #9ccac0;
+}
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  border: 1px solid #6f9997;
+  border-radius: 10px;
+  background: #ffffff0f;
+  color: white;
+  font: inherit;
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color .2s, background .2s, box-shadow .2s;
+}
+.form-field textarea {
+  min-height: 132px;
+  resize: vertical;
+  line-height: 1.55;
+}
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #a9c7c1;
+}
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: #b9e3d8;
+  background: #ffffff17;
+  box-shadow: 0 0 0 3px #b9e3d81c;
+}
+.contact-form-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 46px;
+}
+.contact-form-actions button {
+  flex: 0 0 auto;
+  border: 1px solid #b9e3d8;
+  border-radius: 999px;
+  background: #e8f7f1;
+  color: #143f46;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 11px 18px;
+  transition: transform .2s, background .2s, border-color .2s;
+}
+.contact-form-actions button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: white;
+  border-color: white;
+}
+.contact-form-actions button:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 3px;
+}
+.contact-form-status {
+  margin: 0;
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+  color: #c8dfd8 !important;
+}
+.contact-form-status[data-state="success"] {
+  color: #dff7e9 !important;
+}
+.contact-form-status[data-state="error"] {
+  color: #ffd8cf !important;
+}
+.contact-honey {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

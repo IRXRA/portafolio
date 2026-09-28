@@ -4,8 +4,10 @@
  * No incluyas contraseñas ni datos corporativos en este archivo.
  */
 export const contact = Object.freeze({
-  email: '',
-  linkedin: '',
+  email: 'raul.guzman.manriquez@gmail.com',
+  linkedin: 'https://www.linkedin.com/in/raúl-guzmán-cl/',
+  phoneDisplay: '+56 9 7830 4302',
+  phoneHref: '+56978304302',
 });
 
 export const stages = Object.freeze([

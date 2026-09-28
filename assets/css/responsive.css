@@ -703,3 +703,22 @@
     font-size: 14px
   }
 }
+
+@media(max-width:850px) {
+  .contact-form-panel {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
+@media(max-width:620px) {
+  .contact-form {
+    grid-template-columns: 1fr;
+  }
+  .form-field-wide {
+    grid-column: auto;
+  }
+  .contact-form-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

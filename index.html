@@ -1332,13 +1332,13 @@
             </div>
             <div class="contact-side">
               <span class="contact-kicker">
-                ÁREAS DE COLABORACIÓN
+                CONTACTO DIRECTO
               </span>
               <strong>
-                Datos con aplicación real.
+                Conversemos sobre el próximo desafío.
               </strong>
               <p>
-                Trazabilidad de activos, visualización y automatización para la gestión de emergencias y recursos hídricos.
+                Disponible para oportunidades, colaboraciones y proyectos vinculados a datos, IA, ciberseguridad e infraestructura hídrica.
               </p>
               <div class="contact-links" id="contactLinks" hidden>
               </div>
@@ -1348,6 +1348,55 @@
                   ↗
                 </span>
               </a>
+            </div>
+            <div class="contact-form-panel">
+              <div class="contact-form-heading">
+                <span class="contact-kicker">
+                  ENVIAR UN MENSAJE
+                </span>
+                <strong>
+                  Cuéntame en qué puedo aportar.
+                </strong>
+                <p>
+                  Completa tus datos y recibiré el mensaje directamente en mi correo.
+                </p>
+              </div>
+              <form class="contact-form" id="contactForm" action="https://formsubmit.co/raul.guzman.manriquez@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="Nuevo contacto desde el portafolio de Raúl Guzmán">
+                <input type="hidden" name="_template" value="table">
+                <div class="contact-honey" aria-hidden="true">
+                  <label for="contactCompanyWebsite">Sitio web</label>
+                  <input id="contactCompanyWebsite" type="text" name="_honey" tabindex="-1" autocomplete="off">
+                </div>
+                <div class="form-field">
+                  <label for="contactName">Nombre</label>
+                  <input id="contactName" name="name" type="text" autocomplete="name" required maxlength="100" placeholder="Tu nombre">
+                </div>
+                <div class="form-field">
+                  <label for="contactEmail">Correo electrónico</label>
+                  <input id="contactEmail" name="email" type="email" autocomplete="email" required maxlength="160" placeholder="nombre@empresa.cl">
+                </div>
+                <div class="form-field">
+                  <label for="contactPhone">Teléfono <span>opcional</span></label>
+                  <input id="contactPhone" name="Teléfono" type="tel" autocomplete="tel" maxlength="30" placeholder="+56 9 1234 5678">
+                </div>
+                <div class="form-field">
+                  <label for="contactOrganization">Empresa u organización <span>opcional</span></label>
+                  <input id="contactOrganization" name="Organización" type="text" autocomplete="organization" maxlength="120" placeholder="Empresa / organización">
+                </div>
+                <div class="form-field form-field-wide">
+                  <label for="contactSubject">Motivo</label>
+                  <input id="contactSubject" name="Motivo" type="text" required maxlength="140" placeholder="Proyecto, oportunidad o colaboración">
+                </div>
+                <div class="form-field form-field-wide">
+                  <label for="contactMessage">Mensaje</label>
+                  <textarea id="contactMessage" name="message" rows="5" required maxlength="2000" placeholder="Cuéntame brevemente el contexto, objetivo o necesidad."></textarea>
+                </div>
+                <div class="contact-form-actions form-field-wide">
+                  <button type="submit">Enviar mensaje</button>
+                  <p class="contact-form-status" id="contactFormStatus" role="status" aria-live="polite"></p>
+                </div>
+              </form>
             </div>
           </div>
         </div>
