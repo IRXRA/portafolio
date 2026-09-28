@@ -54,32 +54,58 @@
             <path class="station-header" d="M-45 95v35h80V95M35 130h88" />
           </g>
           <g class="world-valve" id="water-asset-valve">
-            <!-- Tubería base (solid fill instead of thick stroke) -->
-            <path fill="#6c8f88" d="M-90-6h56v12h-56zM34-6h56v12h-56z" />
-            <!-- Bridas (Flanges) -->
-            <rect fill="#4e726b" x="-38" y="-12" width="6" height="24" rx="2" />
-            <rect fill="#4e726b" x="32" y="-12" width="6" height="24" rx="2" />
+            <!-- Tuberías gruesas (estilo original) -->
+            <path class="wv-pipe" d="M-82 0h44 M38 0h44" />
             
-            <!-- Cuerpo de la Válvula -->
-            <path class="wv-body" d="M-32-22 L32 22 L32-22 L-32 22 Z" stroke-linejoin="round"/>
-            <circle class="wv-body" cx="0" cy="0" r="10" />
+            <!-- Bridas -->
+            <rect class="wv-body" x="-38" y="-18" width="10" height="36" rx="2" />
+            <rect class="wv-body" x="28" y="-18" width="10" height="36" rx="2" />
+            
+            <!-- Cuerpo Central -->
+            <path class="wv-body" d="M-18 20 L-10 28 H10 L18 20 Z" stroke-linejoin="round"/>
+            <rect class="wv-body" x="-28" y="-14" width="56" height="34" rx="2" />
+            
+            <!-- Tuerca/Cuello Superior -->
+            <rect class="wv-body" x="-22" y="-22" width="44" height="8" rx="1" />
+            <rect class="wv-body" x="-12" y="-40" width="24" height="18" />
+            <rect class="wv-body" x="-16" y="-46" width="32" height="6" rx="1" />
 
-            <!-- Vástago (Stem) -->
-            <rect fill="#3f6761" x="-2" y="-55" width="4" height="33" />
-            
-            <!-- Posicionador (Positioner box) -->
-            <rect fill="#a5c4b8" stroke="#3f6761" stroke-width="2" x="2" y="-40" width="16" height="18" rx="2" />
-            <circle fill="#3f6761" cx="10" cy="-31" r="3" />
-            
-            <!-- Actuador de Diafragma (Diaphragm) -->
-            <path class="wv-actuator" d="M-38-55 Q0-85 38-55 L34-45 H-34 Z" stroke-linejoin="round"/>
-            <!-- Detalle central del actuador -->
-            <rect fill="#c4d8ce" x="-34" y="-55" width="68" height="4" />
+            <!-- Grupo animado: Volante y Vástago -->
+            <g class="wv-actuator-group">
+              <!-- Vástago -->
+              <path class="wv-stem" d="M0-46 v-22" />
+              
+              <!-- Volante (Handwheel) -->
+              <rect class="wv-actuator" x="-36" y="-76" width="72" height="8" rx="4" />
+              <!-- Centro del volante -->
+              <rect class="wv-actuator" x="-8" y="-80" width="16" height="12" rx="2" />
+            </g>
           </g>
           <g class="world-tank" id="water-asset-tank">
-            <path class="wt-bowl" d="M-82-78H82L64-14C59 5 43 16 22 16h-44c-21 0-37-11-42-30z" />
-            <path class="wt-water" d="M-68-39H68" />
-            <path class="wt-leg" d="M-37 16l-20 152M37 16l20 152M-48 105h96" />
+            <!-- Pilar cilíndrico de la base -->
+            <path class="wt-bowl" d="M-40 168 L-28 20 L28 20 L40 168 Z" stroke-linejoin="round" />
+            
+            <!-- Copa (cuenco superior monumental) -->
+            <path class="wt-bowl" d="M-96 -78 C-96 -10, -50 20, -28 20 L28 20 C50 20, 96 -10, 96 -78 Z" stroke-linejoin="round" />
+            
+            <!-- Tapa/Domo ligeramente curvado -->
+            <path class="wt-bowl" d="M-96 -78 Q0 -94 96 -78 Z" stroke-linejoin="round" />
+
+            <!-- Nivel animado del agua -->
+            <path class="wt-water" d="M-76 -35 H76" />
+
+            <!-- Pequeñas ventanas de ventilación en el cuello (en arco para simular volumen) -->
+            <g fill="#4d716b">
+              <rect x="-24" y="2" width="4" height="10" rx="1" />
+              <rect x="-10" y="5" width="4" height="10" rx="1" />
+              <rect x="6" y="5" width="4" height="10" rx="1" />
+              <rect x="20" y="2" width="4" height="10" rx="1" />
+            </g>
+
+            <!-- Marcas/Anillos estructurales del moldeaje de hormigón -->
+            <path fill="none" stroke="#4d716b" stroke-width="1.5" opacity="0.4" d="M-36 120 Q0 126 36 120" />
+            <path fill="none" stroke="#4d716b" stroke-width="1.5" opacity="0.4" d="M-33 70 Q0 76 33 70" />
+            <path fill="none" stroke="#4d716b" stroke-width="1.5" opacity="0.4" d="M-72 -25 Q0 -15 72 -25" />
           </g>
           <g class="world-pcp" id="water-asset-pressure">
             <rect x="-39" y="-47" width="78" height="94" rx="8" />

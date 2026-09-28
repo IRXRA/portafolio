@@ -484,3 +484,9 @@
 .bird:nth-child(3) { animation-delay: -0.8s; }
 @keyframes flyAcross { from { opacity: 1; transform: translateX(-100px) translateY(800px) scale(0.7); } to { transform: translateX(1800px) translateY(200px) scale(1); opacity: 1; } }
 @keyframes flyFlap { 0% { transform: scaleY(1); } 100% { transform: scaleY(0.3); } }
+
+.wv-actuator-group { animation: actuatorTravel 4s ease-in-out infinite; }
+.pipe-flow-anim { animation: worldFlow 1.5s linear infinite; }
+.valve-core-anim { animation: corePulse 4s ease-in-out infinite; }
+.positioner-led { animation: signal 2s steps(2) infinite; }
+.signal-line { animation: worldFlow 2s linear infinite; }
