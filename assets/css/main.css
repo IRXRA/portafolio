@@ -1,0 +1,7 @@
+/* Orden explícito: fundamentos, interfaz, ilustraciones, movimiento y adaptación. */
+@import url('./base.css') ;
+@import url('./components.css') ;
+@import url('./illustrations.css') ;
+@import url('./animations.css') ;
+@import url('./responsive.css') ;
+@import url('./accessibility.css') ;

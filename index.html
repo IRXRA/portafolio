@@ -1,0 +1,1369 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="theme-color" content="#f6f7f3">
+    <meta name="description" content="Portafolio de Raúl Guzmán: datos, inteligencia artificial y ciberseguridad aplicados a gestión e infraestructura hídrica.">
+    <title>
+      Raúl Guzmán — El agua, los datos y las decisiones
+    </title>
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg">
+    <meta name="color-scheme" content="light">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_CL">
+    <meta property="og:title" content="Raúl Guzmán — Datos que fluyen hacia mejores decisiones">
+    <meta property="og:description" content="Análisis de datos, trazabilidad y herramientas digitales aplicadas a emergencias y recursos hídricos.">
+  </head>
+  <body>
+    <a class="skip-link" href="#inicio">
+      Ir al contenido
+    </a>
+    <div class="hydraulic-world" aria-hidden="true">
+      <svg class="world-svg" viewBox="0 0 1440 3900" preserveAspectRatio="xMidYMin slice">
+        <defs>
+          <linearGradient id="worldHillA" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#b8d0c0"/>
+            <stop offset="1" stop-color="#7fa696"/>
+          </linearGradient>
+          <linearGradient id="worldHillB" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#86aa98"/>
+            <stop offset="1" stop-color="#527f73"/>
+          </linearGradient>
+          <linearGradient id="worldWater" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#74cfc4"/>
+            <stop offset="1" stop-color="#258d98"/>
+          </linearGradient>
+          <filter id="worldSoft">
+            <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#174b48" flood-opacity=".11"/>
+          </filter>
+          <g class="world-station" id="water-asset-pump">
+            <path class="station-shell" d="M-108 5h216v118h-216z" />
+            <path class="station-roof" d="M-122 5l44-34H80l42 34" />
+            <g class="world-pump" transform="translate(-45 65)">
+              <circle r="30" />
+              <circle class="world-impeller" r="16" />
+              <path d="M-14 0h28M0-14v28" />
+            </g>
+            <g class="world-pump" transform="translate(35 65)">
+              <circle r="30" />
+              <circle class="world-impeller reverse" r="16" />
+              <path d="M-14 0h28M0-14v28" />
+            </g>
+            <path class="station-header" d="M-45 95v35h80V95M35 130h88" />
+          </g>
+          <g class="world-valve" id="water-asset-valve">
+            <path class="wv-pipe" d="M-82 0h50M32 0h74" />
+            <path class="wv-body" d="M-34-28L0 0l-34 28h68L0 0l34-28z" />
+            <path class="wv-stem" d="M0-28v-39" />
+            <rect class="wv-actuator" x="-31" y="-91" width="62" height="25" rx="9" />
+            <path class="wv-pilot" d="M-45-17v-53h26M20-70h42v53" />
+            <circle class="wv-pilot-node" cx="62" cy="-70" r="9" />
+          </g>
+          <g class="world-tank" id="water-asset-tank">
+            <path class="wt-bowl" d="M-82-78H82L64-14C59 5 43 16 22 16h-44c-21 0-37-11-42-30z" />
+            <path class="wt-water" d="M-68-39H68" />
+            <path class="wt-leg" d="M-37 16l-20 152M37 16l20 152M-48 105h96" />
+          </g>
+          <g class="world-pcp" id="water-asset-pressure">
+            <rect x="-39" y="-47" width="78" height="94" rx="8" />
+            <circle class="wp-gauge" cy="-15" r="17" />
+            <path class="wp-needle" d="M0-15l10-11" />
+            <path class="wp-control" d="M-25 19L0 36l25-17L0 2z" />
+          </g>
+          <g class="world-dma" id="water-asset-network">
+            <path class="wd-boundary" d="M720 2740l252-95 325 102 65 376-284 161-341-135z" />
+            <path class="wd-street" d="M778 2860h510M820 2765v390M970 2700v520M1135 2712v472M1265 2780v334" />
+            <path class="wd-network" d="M778 2860h510M820 2765v390M970 2700v520M1135 2712v472M1265 2780v334" />
+            <path class="wd-flow" d="M778 2860h510M820 2765v390M970 2700v520M1135 2712v472M1265 2780v334" />
+            <g class="wd-houses">
+              <path d="M850 2810l25-19 25 19v34h-50z" />
+              <path d="M1015 2785l25-19 25 19v34h-50z" />
+              <path d="M1180 2820l25-19 25 19v34h-50z" />
+              <path d="M875 2980l25-19 25 19v34h-50z" />
+              <path d="M1045 3030l25-19 25 19v34h-50z" />
+              <path d="M1195 2995l25-19 25 19v34h-50z" />
+            </g>
+            <g class="wd-meters">
+              <circle cx="820" cy="2860" r="9" />
+              <circle cx="970" cy="2860" r="9" />
+              <circle cx="1135" cy="2860" r="9" />
+              <circle cx="1265" cy="2860" r="9" />
+            </g>
+            <circle class="wd-pulse" cx="970" cy="2860" r="22" />
+          </g>
+          <g class="world-telemetry" id="water-asset-telemetry">
+            <path d="M0 80V0M-13 80h26" />
+            <circle cy="3" r="6" />
+            <path class="wradio a" d="M-18 20a27 27 0 0036 0" />
+            <path class="wradio b" d="M-31 34a45 45 0 0062 0" />
+          </g>
+          <g id="water-asset-landscape">
+            <path class="world-hill far" fill="url(#worldHillA)" d="M0 440C165 281 284 359 420 192c88-108 194-80 294 24 112 117 214 78 336-26 121-103 245-66 390 51V700H0Z" />
+            <path class="world-hill near" fill="url(#worldHillB)" d="M0 525c156-105 282-57 386-158 99-96 197-52 284 42 96 104 196 85 306-8 119-101 267-55 464 72v285H0Z" />
+            <path class="world-river" fill="url(#worldWater)" d="M0 661C179 603 293 650 433 679c142 30 259-9 371 25 112 34 176 100 293 96 118-4 198-69 343-50v180c-171-22-262 58-390 52-137-7-200-76-310-99-111-24-218 11-347-18C257 834 146 796 0 847Z" />
+            <path class="world-river-light" d="M-10 717c179-54 306 18 444 25 159 8 244-28 367 25 119 51 191 77 306 54 112-22 208-37 343-12" />
+          </g>
+        </defs>
+        <!-- HERO LANDSCAPE: water originates in the territory -->
+        <path class="world-hill far" fill="url(#worldHillA)" d="M0 440C165 281 284 359 420 192c88-108 194-80 294 24 112 117 214 78 336-26 121-103 245-66 390 51V700H0Z"/>
+        <path class="world-hill near" fill="url(#worldHillB)" d="M0 525c156-105 282-57 386-158 99-96 197-52 284 42 96 104 196 85 306-8 119-101 267-55 464 72v285H0Z"/>
+        <path class="world-river" fill="url(#worldWater)" d="M0 661C179 603 293 650 433 679c142 30 259-9 371 25 112 34 176 100 293 96 118-4 198-69 343-50v180c-171-22-262 58-390 52-137-7-200-76-310-99-111-24-218 11-347-18C257 834 146 796 0 847Z"/>
+        <path class="world-river-light" d="M-10 717c179-54 306 18 444 25 159 8 244-28 367 25 119 51 191 77 306 54 112-22 208-37 343-12"/>
+        <!-- CONTINUOUS CONDUIT / narrative spine -->
+        <path class="world-pipe shadow" d="M1090 785C1190 880 1168 1035 1034 1118S862 1282 920 1420s175 192 144 350-190 187-209 345 140 219 112 380-180 188-167 360 156 210 128 371-169 190-152 371"/>
+        <path class="world-pipe base" d="M1090 785C1190 880 1168 1035 1034 1118S862 1282 920 1420s175 192 144 350-190 187-209 345 140 219 112 380-180 188-167 360 156 210 128 371-169 190-152 371"/>
+        <path class="world-pipe flow" d="M1090 785C1190 880 1168 1035 1034 1118S862 1282 920 1420s175 192 144 350-190 187-209 345 140 219 112 380-180 188-167 360 156 210 128 371-169 190-152 371"/>
+        <!-- embedded lift station -->
+        <g class="world-station" transform="translate(1010 1175)" filter="url(#worldSoft)">
+          <path class="station-shell" d="M-108 5h216v118h-216z"/>
+          <path class="station-roof" d="M-122 5l44-34H80l42 34"/>
+          <g class="world-pump" transform="translate(-45 65)">
+            <circle r="30"/>
+            <circle class="world-impeller" r="16"/>
+            <path d="M-14 0h28M0-14v28"/>
+          </g>
+          <g class="world-pump" transform="translate(35 65)">
+            <circle r="30"/>
+            <circle class="world-impeller reverse" r="16"/>
+            <path d="M-14 0h28M0-14v28"/>
+          </g>
+          <path class="station-header" d="M-45 95v35h80V95M35 130h88"/>
+          <text x="0" y="-46" text-anchor="middle">
+            PLANTA ELEVADORA
+          </text>
+          <text class="world-sub" x="0" y="-29" text-anchor="middle">
+            IMPULSIÓN · BOMBAS EN PARALELO
+          </text>
+        </g>
+        <!-- industrial control valve integrated on spine -->
+        <g class="world-valve" transform="translate(908 1600)">
+          <path class="wv-pipe" d="M-82 0h50M32 0h74"/>
+          <path class="wv-body" d="M-34-28L0 0l-34 28h68L0 0l34-28z"/>
+          <path class="wv-stem" d="M0-28v-39"/>
+          <rect class="wv-actuator" x="-31" y="-91" width="62" height="25" rx="9"/>
+          <path class="wv-pilot" d="M-45-17v-53h26M20-70h42v53"/>
+          <circle class="wv-pilot-node" cx="62" cy="-70" r="9"/>
+          <text x="0" y="55" text-anchor="middle">
+            CONTROL HIDRÁULICO
+          </text>
+        </g>
+        <!-- elevated storage as spatial transition -->
+        <g class="world-tank" transform="translate(1005 1980)" filter="url(#worldSoft)">
+          <path class="wt-bowl" d="M-82-78H82L64-14C59 5 43 16 22 16h-44c-21 0-37-11-42-30z"/>
+          <path class="wt-water" d="M-68-39H68"/>
+          <path class="wt-leg" d="M-37 16l-20 152M37 16l20 152M-48 105h96"/>
+          <text x="0" y="-101" text-anchor="middle">
+            REGULACIÓN
+          </text>
+        </g>
+        <!-- PCP on the main conduit -->
+        <g class="world-pcp" transform="translate(850 2470)">
+          <rect x="-39" y="-47" width="78" height="94" rx="8"/>
+          <circle class="wp-gauge" cy="-15" r="17"/>
+          <path class="wp-needle" d="M0-15l10-11"/>
+          <path class="wp-control" d="M-25 19L0 36l25-17L0 2z"/>
+          <text x="0" y="-65" text-anchor="middle">
+            PCP
+          </text>
+          <text class="world-sub" x="0" y="70" text-anchor="middle">
+            PRESIÓN · CONTROL
+          </text>
+        </g>
+        <!-- DMA becomes the environment around project/capability content -->
+        <g class="world-dma">
+          <path class="wd-boundary" d="M720 2740l252-95 325 102 65 376-284 161-341-135z"/>
+          <text x="1115" y="2690" text-anchor="middle">
+            DMA · SECTOR DE MEDICIÓN
+          </text>
+          <path class="wd-street" d="M778 2860h510M820 2765v390M970 2700v520M1135 2712v472M1265 2780v334"/>
+          <path class="wd-network" d="M778 2860h510M820 2765v390M970 2700v520M1135 2712v472M1265 2780v334"/>
+          <path class="wd-flow" d="M778 2860h510M820 2765v390M970 2700v520M1135 2712v472M1265 2780v334"/>
+          <g class="wd-houses">
+            <path d="M850 2810l25-19 25 19v34h-50z"/>
+            <path d="M1015 2785l25-19 25 19v34h-50z"/>
+            <path d="M1180 2820l25-19 25 19v34h-50z"/>
+            <path d="M875 2980l25-19 25 19v34h-50z"/>
+            <path d="M1045 3030l25-19 25 19v34h-50z"/>
+            <path d="M1195 2995l25-19 25 19v34h-50z"/>
+          </g>
+          <g class="wd-meters">
+            <circle cx="820" cy="2860" r="9"/>
+            <circle cx="970" cy="2860" r="9"/>
+            <circle cx="1135" cy="2860" r="9"/>
+            <circle cx="1265" cy="2860" r="9"/>
+          </g>
+          <circle class="wd-pulse" cx="970" cy="2860" r="22"/>
+        </g>
+        <!-- telemetry / data rises out of physical network -->
+        <g class="world-telemetry" transform="translate(1245 2590)">
+          <path d="M0 80V0M-13 80h26"/>
+          <circle cy="3" r="6"/>
+          <path class="wradio a" d="M-18 20a27 27 0 0036 0"/>
+          <path class="wradio b" d="M-31 34a45 45 0 0062 0"/>
+        </g>
+      </svg>
+    </div>
+    <header class="nav">
+      <div class="container nav-inner">
+        <a class="logo" href="#inicio">
+          Raúl Guzmán
+          <small>
+            DATOS · IA · AGUA
+          </small>
+        </a>
+        <nav class="nav-links" id="navLinks" aria-label="Navegación principal">
+          <a href="#perfil">
+            Perfil
+          </a>
+          <a href="#capacidades">
+            Capacidades
+          </a>
+          <a href="#recorrido">
+            El recorrido
+          </a>
+          <a href="#proyectos">
+            Proyectos
+          </a>
+          <a href="#formacion">
+            Formación
+          </a>
+          <a class="nav-cta" href="#contacto">
+            Contacto ↗
+          </a>
+        </nav>
+        <div class="nav-tools">
+          <button class="motion-master" id="motionMaster" type="button" aria-label="Pausar todas las animaciones" aria-pressed="false">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M5 3v10M11 3v10"/>
+            </svg>
+            <span id="motionMasterLabel">
+              Pausar
+            </span>
+          </button>
+          <button class="menu-toggle" id="menuToggle" type="button" aria-controls="navLinks" aria-expanded="false">
+            Menú
+          </button>
+        </div>
+      </div>
+      <div class="reading-line" id="readingLine" aria-hidden="true">
+      </div>
+    </header>
+    <main id="inicio" tabindex="-1">
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <div class="eyebrow">
+              Datos · Inteligencia Artificial · Infraestructura hídrica
+            </div>
+            <h1>
+              Hacer visible el agua para
+              <em>
+                decidir mejor.
+              </em>
+            </h1>
+            <p class="hero-lead">
+              Soy Raúl Guzmán. Trabajo con datos y herramientas digitales para hacer más visible la gestión de activos y apoyar decisiones en torno al agua y la operación.
+            </p>
+            <div class="hero-buttons">
+              <a class="button primary" href="#proyectos">
+                Ver proyectos ↗
+              </a>
+              <a class="button secondary" href="#recorrido">
+                Seguir el agua
+              </a>
+            </div>
+            <div class="hero-trail" aria-label="Del agua al dato y del dato a la decisión">
+              <span>
+                Agua
+              </span>
+              <i aria-hidden="true">
+              </i>
+              <span>
+                Información
+              </span>
+              <i aria-hidden="true">
+              </i>
+              <span>
+                Decisión
+              </span>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <canvas id="heroWater" aria-hidden="true">
+            </canvas>
+            <a class="hero-object hero-object-pump" href="#recorrido" data-select-stage="2" aria-label="Explorar la etapa de impulsión y su planta elevadora">
+              <svg viewBox="-145 -42 290 205" aria-hidden="true">
+                <use href="#water-asset-pump"/>
+              </svg>
+              <span class="object-label">
+                Planta elevadora
+              </span>
+            </a>
+            <a class="hero-object hero-object-valve" href="#recorrido" data-select-stage="1" aria-label="Explorar la etapa de control y su válvula">
+              <svg viewBox="-108 -116 216 172" aria-hidden="true">
+                <use href="#water-asset-valve"/>
+              </svg>
+              <span class="object-label">
+                Control
+              </span>
+            </a>
+            <a class="hero-object hero-object-tank" href="#recorrido" data-select-stage="1" aria-label="Explorar la regulación del sistema">
+              <svg viewBox="-105 -106 210 299" aria-hidden="true">
+                <use href="#water-asset-tank"/>
+              </svg>
+              <span class="object-label">
+                Regulación
+              </span>
+            </a>
+            <span class="hero-map-label" aria-hidden="true">
+              El agua conecta el recorrido
+            </span>
+            <div class="hero-caption">
+              <strong>
+                Una mirada conectada
+              </strong>
+              <span>
+                Del dato al activo. Del análisis a la decisión.
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="hero-metrics">
+        <div class="container metric-grid">
+          <div class="metric">
+            <strong>
+              Datos & analítica
+            </strong>
+            <span>
+              Power BI · Python · VBA
+            </span>
+          </div>
+          <div class="metric">
+            <strong>
+              Machine Learning
+            </strong>
+            <span>
+              Formación en datos y modelos
+            </span>
+          </div>
+          <div class="metric">
+            <strong>
+              Gestión hídrica
+            </strong>
+            <span>
+              Trazabilidad · ANR · activos críticos
+            </span>
+          </div>
+          <div class="metric">
+            <strong>
+              Ciberseguridad
+            </strong>
+            <span>
+              Ingeniería en etapa final de formación
+            </span>
+          </div>
+        </div>
+      </div>
+      <section class="section" id="perfil" aria-labelledby="titulo-perfil">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">
+                01 / El origen · Mi perfil
+              </div>
+              <h2 id="titulo-perfil">
+                Primero el problema.
+                <br>
+                Después la tecnología.
+              </h2>
+            </div>
+            <p>
+              El valor de una solución no está en la complejidad de su modelo, sino en la claridad con que ayuda a entender lo que ocurre y a decidir qué hacer después.
+            </p>
+          </div>
+          <div class="about-grid">
+            <div class="about-feature">
+              <h3>
+                Una mirada interdisciplinaria sobre desafíos reales del agua.
+              </h3>
+              <p>
+                Soy estudiante de Ingeniería en Ciberseguridad, en la etapa final de mi formación, con estudios complementarios en ciencia de datos y aprendizaje automático. Mi experiencia incluye dashboards corporativos y una herramienta web para el control y seguimiento de grifos.
+              </p>
+              <p class="about-quote">
+                “Un dashboard solo importa si acerca una buena decisión a quien debe tomarla.”
+              </p>
+            </div>
+            <div class="about-detail">
+              <div class="detail">
+                <strong>
+                  Lo que me mueve
+                </strong>
+                <p>
+                  Hacer más visible la operación hídrica, desde activos distribuidos hasta señales de anomalía.
+                </p>
+              </div>
+              <div class="detail">
+                <strong>
+                  Cómo abordo el problema
+                </strong>
+                <p>
+                  Ordenar información, detectar patrones, diseñar herramientas y presentar hallazgos accionables.
+                </p>
+              </div>
+              <div class="detail">
+                <strong>
+                  Dónde quiero aportar
+                </strong>
+                <p>
+                  Seguridad hídrica, reducción de Agua No Registrada (ANR), trazabilidad y protección de sistemas críticos.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section light" id="capacidades" aria-labelledby="titulo-capacidades">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">
+                02 / El flujo · Mis herramientas
+              </div>
+              <h2 id="titulo-capacidades">
+                Distintas herramientas.
+                <br>
+                Un mismo flujo de información.
+              </h2>
+            </div>
+            <p>
+              Analizar, desarrollar y visualizar son partes de un mismo recorrido: convertir la información disponible en una herramienta útil para la gestión.
+            </p>
+          </div>
+          <div class="cap-grid">
+            <article class="cap-card">
+              <div class="cap-top">
+                <span>
+                  01 / 06
+                </span>
+                <span class="card-state">
+                  ANÁLISIS
+                </span>
+              </div>
+              <div class="cap-art semantic-art analytics-art" aria-hidden="true">
+                <svg viewBox="0 0 280 160">
+                  <rect class="ui-panel" x="22" y="18" width="236" height="126" rx="9"/>
+                  <rect class="ui-head" x="35" y="31" width="82" height="7" rx="3"/>
+                  <circle class="status-dot" cx="241" cy="34" r="4"/>
+                  <g class="kpi">
+                    <rect x="35" y="50" width="54" height="28" rx="5"/>
+                    <path d="M45 69v-8m9 8V56m9 13v-5m9 5V53" class="mini-bars"/>
+                  </g>
+                  <g class="kpi">
+                    <rect x="97" y="50" width="66" height="28" rx="5"/>
+                    <path class="drop-mini" d="M130 56c-7 9-9 12-9 15a9 9 0 0018 0c0-3-2-6-9-15z"/>
+                  </g>
+                  <g class="kpi">
+                    <rect x="171" y="50" width="72" height="28" rx="5"/>
+                    <path d="M182 68h49" class="meter-bg"/>
+                    <path d="M182 68h34" class="meter-live"/>
+                  </g>
+                  <path class="chart-grid" d="M36 94h205M36 112h205M36 130h205M67 88v47M108 88v47M149 88v47M190 88v47M231 88v47"/>
+                  <path class="water-chart" d="M36 125C53 119 62 102 78 106s24 17 39 8 23-23 39-16 22 21 38 12 26-8 47-18"/>
+                  <circle class="chart-cursor" cx="156" cy="98" r="4"/>
+                  <path class="chart-scan" d="M156 88v47"/>
+                  <circle class="analytics-pulse" cx="216" cy="68" r="4"/>
+                  <path class="analytics-ripple" d="M208 68h16"/>
+                </svg>
+              </div>
+              <h3>
+                Analítica hídrica
+              </h3>
+              <p>
+                Transformar datos operacionales en señales para identificar patrones y orientar decisiones.
+              </p>
+              <div class="cap-bottom">
+                <a href="#recorrido" data-select-stage="3">
+                  <span>
+                    Leer las señales
+                  </span>
+                  <span class="arrow" aria-hidden="true">
+                    ↗
+                  </span>
+                </a>
+              </div>
+            </article>
+            <article class="cap-card">
+              <div class="cap-top">
+                <span>
+                  02 / 06
+                </span>
+                <span class="card-state">
+                  MODELO
+                </span>
+              </div>
+              <div class="cap-art semantic-art ml-art" aria-hidden="true">
+                <svg viewBox="0 0 280 160">
+                  <path class="ml-axis" d="M26 132H255M38 28v104"/>
+                  <path class="ml-band" d="M39 92C61 83 75 91 96 80s39-15 58-7 33 7 52-2 32-9 48-5V95c-17-4-30-3-48 6s-34 10-52 2-37-4-58 7-36 3-57 12z"/>
+                  <path class="ml-line" d="M39 107C61 98 75 106 96 95s39-15 58-7 33 7 52-2 32-9 48-5"/>
+                  <path class="ml-anomaly-line" d="M171 91C181 86 187 43 198 42s15 37 23 42"/>
+                  <circle class="ml-anomaly" cx="198" cy="42" r="6"/>
+                  <circle class="ml-ring" cx="198" cy="42" r="15"/>
+                  <g class="ml-inference">
+                    <path class="ml-scanline" d="M55 24v108"/>
+                    <circle class="ml-sample s1" cx="55" cy="100" r="3"/>
+                    <circle class="ml-sample s2" cx="55" cy="91" r="2"/>
+                  </g>
+                  <g class="ml-alert">
+                    <rect x="176" y="17" width="59" height="18" rx="9"/>
+                    <circle cx="186" cy="26" r="3"/>
+                    <path d="M193 26h32"/>
+                  </g>
+                  <g class="ml-nodes">
+                    <circle cx="62" cy="97" r="3"/>
+                    <circle cx="96" cy="95" r="3"/>
+                    <circle cx="133" cy="85" r="3"/>
+                    <circle cx="154" cy="88" r="3"/>
+                    <circle cx="221" cy="84" r="3"/>
+                  </g>
+                  <rect class="ml-label" x="174" y="18" width="57" height="15" rx="7"/>
+                  <path d="M181 25h14m5 0h23" class="ml-label-line"/>
+                </svg>
+              </div>
+              <h3>
+                Machine Learning
+              </h3>
+              <p>
+                Explorar anomalías y modelos predictivos que permitan priorizar casos relevantes.
+              </p>
+              <div class="cap-bottom">
+                <a href="#recorrido" data-select-stage="3">
+                  <span>
+                    Explorar los patrones
+                  </span>
+                  <span class="arrow" aria-hidden="true">
+                    ↗
+                  </span>
+                </a>
+              </div>
+            </article>
+            <article class="cap-card">
+              <div class="cap-top">
+                <span>
+                  03 / 06
+                </span>
+                <span class="card-state">
+                  BI
+                </span>
+              </div>
+              <div class="cap-art semantic-art bi-art" aria-hidden="true">
+                <svg viewBox="0 0 280 160">
+                  <rect class="ui-panel" x="25" y="19" width="230" height="123" rx="9"/>
+                  <path class="ui-head" d="M38 34h66"/>
+                  <g transform="translate(74 91)">
+                    <circle class="donut-bg" r="29"/>
+                    <circle class="donut-live" r="29"/>
+                  </g>
+                  <g class="bi-bars">
+                    <rect x="125" y="99" width="12" height="27" rx="2"/>
+                    <rect x="144" y="80" width="12" height="46" rx="2"/>
+                    <rect x="163" y="89" width="12" height="37" rx="2"/>
+                    <rect x="182" y="66" width="12" height="60" rx="2"/>
+                    <rect x="201" y="76" width="12" height="50" rx="2"/>
+                  </g>
+                  <path class="bi-level" d="M124 53h93"/>
+                  <circle class="bi-knob" cx="178" cy="53" r="5"/>
+                  <path class="bi-wave" d="M38 132c12-7 23 7 35 0s23 7 35 0"/>
+                  <g class="bi-filters">
+                    <rect x="126" y="32" width="28" height="10" rx="5"/>
+                    <rect x="159" y="32" width="39" height="10" rx="5"/>
+                    <rect x="203" y="32" width="25" height="10" rx="5"/>
+                  </g>
+                  <circle class="bi-live" cx="237" cy="34" r="3"/>
+                </svg>
+              </div>
+              <h3>
+                Visualización y BI
+              </h3>
+              <p>
+                Construir tableros claros que conecten indicadores, contexto y decisiones.
+              </p>
+              <div class="cap-bottom">
+                <a href="#recorrido" data-select-stage="4">
+                  <span>
+                    Llegar a la decisión
+                  </span>
+                  <span class="arrow" aria-hidden="true">
+                    ↗
+                  </span>
+                </a>
+              </div>
+            </article>
+            <article class="cap-card">
+              <div class="cap-top">
+                <span>
+                  04 / 06
+                </span>
+                <span class="card-state">
+                  SISTEMA
+                </span>
+              </div>
+              <div class="cap-art semantic-art dev-art" aria-hidden="true">
+                <svg viewBox="0 0 280 160">
+                  <rect class="dev-screen" x="24" y="27" width="79" height="95" rx="7"/>
+                  <path class="dev-code" d="M38 48h35M38 61h48M38 74h28M38 87h42"/>
+                  <path class="dev-bracket" d="M78 95l8 7-8 7m-21-14-8 7 8 7"/>
+                  <rect class="dev-api" x="123" y="53" width="48" height="44" rx="8"/>
+                  <text x="147" y="79" text-anchor="middle" class="dev-text">
+                    API
+                  </text>
+                  <ellipse class="dev-db" cx="225" cy="52" rx="29" ry="10"/>
+                  <path class="dev-db" d="M196 52v48c0 6 13 10 29 10s29-4 29-10V52M196 76c0 6 13 10 29 10s29-4 29-10"/>
+                  <path class="dev-link" d="M103 75h20M171 75h25"/>
+                  <circle class="dev-packet p1" cx="112" cy="75" r="4"/>
+                  <circle class="dev-packet p2" cx="184" cy="75" r="4"/>
+                  <path class="dev-water" d="M207 124c11-7 22 7 33 0"/>
+                  <circle class="api-pulse" cx="147" cy="75" r="24"/>
+                  <path class="db-status" d="M215 120h20"/>
+                </svg>
+              </div>
+              <h3>
+                Desarrollo y automatización
+              </h3>
+              <p>
+                Conectar análisis, servicios web y flujos de información en soluciones utilizables.
+              </p>
+              <div class="cap-bottom">
+                <a href="#recorrido" data-select-stage="2">
+                  <span>
+                    Impulsar la información
+                  </span>
+                  <span class="arrow" aria-hidden="true">
+                    ↗
+                  </span>
+                </a>
+              </div>
+            </article>
+            <article class="cap-card">
+              <div class="cap-top">
+                <span>
+                  05 / 06
+                </span>
+                <span class="card-state">
+                  ACTIVOS
+                </span>
+              </div>
+              <div class="cap-art semantic-art trace-art" aria-hidden="true">
+                <svg viewBox="0 0 280 160">
+                  <path class="trace-pipe" d="M23 113H73V72h61V42h67v47h55M73 113v27h93v-27h90"/>
+                  <path class="trace-flow" d="M23 113H73V72h61V42h67v47h55"/>
+                  <g class="trace-nodes">
+                    <circle cx="73" cy="113" r="8"/>
+                    <circle cx="73" cy="72" r="8"/>
+                    <circle cx="134" cy="72" r="8"/>
+                    <circle cx="134" cy="42" r="8"/>
+                    <circle cx="201" cy="42" r="8"/>
+                    <circle cx="201" cy="89" r="8"/>
+                  </g>
+                  <circle class="trace-active" cx="134" cy="42" r="11"/>
+                  <circle class="trace-ring" cx="134" cy="42" r="21"/>
+                  <rect class="trace-tag" x="154" y="19" width="77" height="17" rx="8"/>
+                  <path d="M164 27h18m7 0h31" class="trace-tag-line"/>
+                  <path class="trace-packet" d="M28 113h18"/>
+                  <path class="trace-packet trace-packet-2" d="M28 113h12"/>
+                  <circle class="trace-beacon" cx="201" cy="89" r="14"/>
+                </svg>
+              </div>
+              <h3>
+                Trazabilidad de activos
+              </h3>
+              <p>
+                Hacer visible el estado y contexto de elementos críticos de una red hídrica.
+              </p>
+              <div class="cap-bottom">
+                <a href="#recorrido" data-select-stage="1">
+                  <span>
+                    Seguir el activo
+                  </span>
+                  <span class="arrow" aria-hidden="true">
+                    ↗
+                  </span>
+                </a>
+              </div>
+            </article>
+            <article class="cap-card">
+              <div class="cap-top">
+                <span>
+                  06 / 06
+                </span>
+                <span class="card-state">
+                  PROTECCIÓN
+                </span>
+              </div>
+              <div class="cap-art semantic-art cyber-art" aria-hidden="true">
+                <svg viewBox="0 0 280 170">
+                  <defs>
+                    <linearGradient id="cyberWater" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0" stop-color="#8bded1"/>
+                      <stop offset="1" stop-color="#1b8191"/>
+                    </linearGradient>
+                    <clipPath id="cyberClip">
+                      <path d="M140 18c27 18 50 23 75 27v43c0 39-24 63-75 77-51-14-75-38-75-77V45c25-4 48-9 75-27z"/>
+                    </clipPath>
+                  </defs>
+                  <path class="cyber-aura a2" d="M140 9c32 21 60 27 88 31v49c0 47-30 75-88 90-58-15-88-43-88-90V40c28-4 56-10 88-31z"/>
+                  <path class="cyber-aura" d="M140 13c30 20 56 25 82 29v46c0 43-27 69-82 84-55-15-82-41-82-84V42c26-4 52-9 82-29z"/>
+                  <path class="cyber-shield" d="M140 18c27 18 50 23 75 27v43c0 39-24 63-75 77-51-14-75-38-75-77V45c25-4 48-9 75-27z"/>
+                  <g clip-path="url(#cyberClip)">
+                    <rect class="cyber-water" x="58" y="80" width="165" height="90" fill="url(#cyberWater)"/>
+                    <path class="cyber-wave" d="M48 84c22-12 40 11 62 0s41 10 62 0 40 9 64-2"/>
+                    <path class="cyber-wave w2" d="M48 98c22-10 40 9 62 0s41 8 62 0 40 8 64-2"/>
+                  </g>
+                  <path class="cyber-edge" d="M140 18c27 18 50 23 75 27v43c0 39-24 63-75 77-51-14-75-38-75-77V45c25-4 48-9 75-27z"/>
+                  <g class="cyber-lock">
+                    <rect x="121" y="78" width="38" height="32" rx="7"/>
+                    <path d="M129 78V68a11 11 0 0122 0v10"/>
+                    <circle cx="140" cy="94" r="4"/>
+                  </g>
+                  <path class="cyber-check" d="M130 95l7 7 15-17"/>
+                  <circle class="cyber-verify" cx="140" cy="94" r="27"/>
+                  <g class="cyber-nodes">
+                    <circle cx="93" cy="63" r="4"/>
+                    <circle cx="187" cy="63" r="4"/>
+                    <circle cx="99" cy="122" r="4"/>
+                    <circle cx="181" cy="122" r="4"/>
+                    <path d="M97 65l27 18m59-18-27 18m-53 37 25-17m49 17-25-17"/>
+                  </g>
+                </svg>
+              </div>
+              <h3>
+                Ciberseguridad
+              </h3>
+              <p>
+                Incorporar protección de información y principios de seguridad desde el diseño.
+              </p>
+              <div class="cap-bottom">
+                <a href="#recorrido" data-select-stage="1">
+                  <span>
+                    Proteger el contexto
+                  </span>
+                  <span class="arrow" aria-hidden="true">
+                    ↗
+                  </span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="journey" id="recorrido" aria-labelledby="titulo-recorrido">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">
+                03 / El recorrido · Del agua a la decisión
+              </div>
+              <h2 id="titulo-recorrido">
+                Sigue el agua.
+                <br>
+                Entiende la decisión.
+              </h2>
+            </div>
+            <p>
+              Desde la fuente hasta la distribución, cada etapa del agua tiene una pregunta que resolver. Este recorrido conecta esas preguntas con mi forma de trabajar con información.
+            </p>
+          </div>
+          <div class="journey-grid">
+            <div class="journey-copy">
+              <div class="eyebrow" id="stageNumber">
+                ETAPA 01 / 05
+              </div>
+              <h3 id="stageTitle">
+                Captación
+              </h3>
+              <p id="stageText" aria-live="polite" aria-atomic="true">
+                Todo comienza en el origen. Así como el agua se capta desde una fuente, el análisis comienza reuniendo información confiable y comprendiendo su contexto.
+              </p>
+              <div class="stage-list" aria-label="Estaciones del recorrido">
+                <button type="button" aria-controls="stageTitle stageText" class="stage" data-stage="0" aria-pressed="true">
+                  <span>
+                    01
+                  </span>
+                  <strong>
+                    Captación
+                  </strong>
+                </button>
+                <button type="button" aria-controls="stageTitle stageText" class="stage" data-stage="1" aria-pressed="false">
+                  <span>
+                    02
+                  </span>
+                  <strong>
+                    Control
+                  </strong>
+                </button>
+                <button type="button" aria-controls="stageTitle stageText" class="stage" data-stage="2" aria-pressed="false">
+                  <span>
+                    03
+                  </span>
+                  <strong>
+                    Impulsión
+                  </strong>
+                </button>
+                <button type="button" aria-controls="stageTitle stageText" class="stage" data-stage="3" aria-pressed="false">
+                  <span>
+                    04
+                  </span>
+                  <strong>
+                    Telemetría
+                  </strong>
+                </button>
+                <button type="button" aria-controls="stageTitle stageText" class="stage" data-stage="4" aria-pressed="false">
+                  <span>
+                    05
+                  </span>
+                  <strong>
+                    Distribución
+                  </strong>
+                </button>
+              </div>
+            </div>
+            <div class="journey-scene">
+              <canvas id="systemCanvas" role="img" aria-label="Simulación ilustrativa de agua fluyendo por una red con cinco estaciones">
+              </canvas>
+              <div class="scene-object-display" aria-hidden="true">
+                <svg class="scene-asset is-visible" data-scene-stage="0" viewBox="0 110 1440 900">
+                  <use href="#water-asset-landscape"/>
+                </svg>
+                <svg class="scene-asset" data-scene-stage="1" viewBox="-120 -130 240 205">
+                  <use href="#water-asset-valve"/>
+                </svg>
+                <svg class="scene-asset" data-scene-stage="2" viewBox="-150 -62 300 240">
+                  <use href="#water-asset-pump"/>
+                </svg>
+                <svg class="scene-asset" data-scene-stage="3" viewBox="-115 -100 230 240">
+                  <g transform="translate(-40 5)">
+                    <use href="#water-asset-pressure"/>
+                  </g>
+                  <g transform="translate(63 -48)">
+                    <use href="#water-asset-telemetry"/>
+                  </g>
+                </svg>
+                <svg class="scene-asset" data-scene-stage="4" viewBox="690 2630 700 690">
+                  <use href="#water-asset-network"/>
+                </svg>
+              </div>
+              <button class="scene-hit" type="button" data-select-stage="0" aria-label="Seleccionar Captación" aria-pressed="true" aria-controls="stageTitle stageText">
+              </button>
+              <button class="scene-hit" type="button" data-select-stage="1" aria-label="Seleccionar Control" aria-pressed="false" aria-controls="stageTitle stageText">
+              </button>
+              <button class="scene-hit" type="button" data-select-stage="2" aria-label="Seleccionar Impulsión" aria-pressed="false" aria-controls="stageTitle stageText">
+              </button>
+              <button class="scene-hit" type="button" data-select-stage="3" aria-label="Seleccionar Telemetría" aria-pressed="false" aria-controls="stageTitle stageText">
+              </button>
+              <button class="scene-hit" type="button" data-select-stage="4" aria-label="Seleccionar Distribución" aria-pressed="false" aria-controls="stageTitle stageText">
+              </button>
+              <div class="scene-top">
+                <span class="scene-label">
+                  EL RECORRIDO DEL AGUA
+                </span>
+                <span class="scene-badge" id="flowBadge">
+                  01 · EL ORIGEN
+                </span>
+              </div>
+              <div class="scene-bottom">
+                <span class="stage-description" id="sceneDescription">
+                  Captar el agua. Comprender el dato.
+                </span>
+                <div class="motion-controls">
+                  <button type="button" id="motionToggle" aria-pressed="false">
+                    Pausar animación
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="scene-note">
+            Recorrido conceptual: las escenas ilustran el vínculo entre el agua y la información.
+          </p>
+        </div>
+      </section>
+      <section class="section light" id="proyectos" aria-labelledby="titulo-proyectos">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">
+                04 / La aplicación · Mis proyectos
+              </div>
+              <h2 id="titulo-proyectos">
+                Cuando la información
+                <br>
+                llega al terreno.
+              </h2>
+            </div>
+            <p>
+              Proyectos orientados a mejorar la trazabilidad, interpretar señales y apoyar decisiones operativas. El valor está en conectar el problema con una solución utilizable.
+            </p>
+          </div>
+          <p class="project-context">
+            Las ilustraciones representan el enfoque de cada proyecto. La información corporativa se mantiene reservada.
+          </p>
+          <div class="projects">
+            <article class="project" id="proyecto-grifos">
+              <div class="project-copy">
+                <div class="eyebrow">
+                  Caso 01 · Trazabilidad de activos
+                </div>
+                <h3>
+                  Control y trazabilidad de grifos
+                </h3>
+                <h4>
+                  El problema
+                </h4>
+                <p>
+                  Conocer el estado y la historia de cada grifo es fundamental para coordinar su gestión y apoyar la respuesta ante emergencias.
+                </p>
+                <h4>
+                  El enfoque
+                </h4>
+                <p>
+                  Una aplicación web que centraliza la información de estos activos y facilita su seguimiento, trazabilidad y consulta para la operación.
+                </p>
+                <h4>
+                  Aporte esperado
+                </h4>
+                <p>
+                  Información organizada para dar seguimiento a los activos y apoyar decisiones operativas.
+                </p>
+                <div class="tags">
+                  <span>
+                    Python
+                  </span>
+                  <span>
+                    Uvicorn
+                  </span>
+                  <span>
+                    JavaScript
+                  </span>
+                  <span>
+                    SQL
+                  </span>
+                  <span>
+                    Algoritmos TR
+                  </span>
+                </div>
+                <div class="project-outcome">
+                  <div>
+                    <b>
+                      Señal
+                    </b>
+                    <span>
+                      Estado y contexto del activo
+                    </span>
+                  </div>
+                  <div>
+                    <b>
+                      Decisión
+                    </b>
+                    <span>
+                      Priorizar seguimiento e intervención
+                    </span>
+                  </div>
+                  <div>
+                    <b>
+                      Valor
+                    </b>
+                    <span>
+                      Continuidad del seguimiento
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="project-visual">
+                <svg viewBox="0 0 480 350" role="img" aria-label="Diagrama de una red de grifos conectada a un sistema de trazabilidad">
+                  <path class="diagram-pipe" d="M30 175H140V95H285V175H445M140 175v95h145v-95"/>
+                  <path class="diagram-flow" d="M30 175H140V95H285V175H445M140 175v95h145v-95"/>
+                  <circle class="diagram-node" cx="140" cy="175" r="22"/>
+                  <circle class="diagram-node" cx="285" cy="175" r="22"/>
+                  <circle class="diagram-node" cx="285" cy="95" r="19"/>
+                  <circle class="diagram-node" cx="140" cy="270" r="18"/>
+                  <path d="M140 153v-27m-12 0h24m-12-12v12" stroke="#527e79" stroke-width="4" fill="none"/>
+                  <path d="M285 153v-27m-12 0h24m-12-12v12" stroke="#527e79" stroke-width="4" fill="none"/>
+                  <circle class="diagram-ring" cx="285" cy="95" r="30"/>
+                  <circle class="diagram-ring diagram-ring-delayed" cx="285" cy="95" r="43"/>
+                  <rect x="343" y="222" width="108" height="71" rx="9" fill="#f9fdfa" stroke="#6b9a91" stroke-width="2"/>
+                  <path d="M358 244h45m-45 13h76m-76 13h59" stroke="#a7c6bd" stroke-width="4" stroke-linecap="round"/>
+                  <text class="diagram-label" x="350" y="213">
+                    VISIBILIDAD
+                  </text>
+                  <text class="diagram-label" x="38" y="309">
+                    ACTIVOS
+                  </text>
+                  <text class="diagram-label" x="241" y="46">
+                    TRAZABILIDAD
+                  </text>
+                </svg>
+              </div>
+            </article>
+            <article class="project" id="proyecto-anomalias">
+              <div class="project-copy">
+                <div class="eyebrow">
+                  Caso 02 · Analítica de anomalías
+                </div>
+                <h3>
+                  Analítica de anomalías hídricas
+                </h3>
+                <h4>
+                  El problema
+                </h4>
+                <p>
+                  Fraudes y robos de medidores generan pérdidas y requieren herramientas para detectar comportamientos irregulares y focalizar la revisión.
+                </p>
+                <h4>
+                  El enfoque
+                </h4>
+                <p>
+                  Analítica, procesamiento de datos y modelado predictivo para identificar señales de anomalía y visualizar casos prioritarios.
+                </p>
+                <h4>
+                  Aporte esperado
+                </h4>
+                <p>
+                  Apoyar la recuperación financiera y mejorar la focalización de la operación mediante IA y analítica.
+                </p>
+                <div class="tags">
+                  <span>
+                    Apache Spark
+                  </span>
+                  <span>
+                    Power BI
+                  </span>
+                  <span>
+                    DAX
+                  </span>
+                  <span>
+                    Modelado predictivo
+                  </span>
+                </div>
+                <div class="project-outcome">
+                  <div>
+                    <b>
+                      Señal
+                    </b>
+                    <span>
+                      Comportamiento irregular
+                    </span>
+                  </div>
+                  <div>
+                    <b>
+                      Decisión
+                    </b>
+                    <span>
+                      Focalizar casos prioritarios
+                    </span>
+                  </div>
+                  <div>
+                    <b>
+                      Valor
+                    </b>
+                    <span>
+                      Apoyo a recuperación y operación
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="project-visual">
+                <svg viewBox="0 0 480 350" role="img" aria-label="Diagrama de medición, señal de anomalía y análisis">
+                  <path class="diagram-pipe" d="M25 178H455"/>
+                  <path class="diagram-flow" d="M25 178H455"/>
+                  <circle class="diagram-node" cx="110" cy="178" r="31"/>
+                  <circle cx="110" cy="178" r="21" fill="none" stroke="#80a99e" stroke-width="2"/>
+                  <path d="M110 178l14-14" stroke="#278e92" stroke-width="3"/>
+                  <circle class="diagram-node" cx="246" cy="178" r="15"/>
+                  <circle class="diagram-ring" cx="246" cy="178" r="34"/>
+                  <circle class="diagram-ring diagram-ring-delayed" cx="246" cy="178" r="52"/>
+                  <path d="M360 153l27-46 27 46Z" fill="#f9fdfa" stroke="#4e8b85" stroke-width="3"/>
+                  <path d="M387 120v15" stroke="#278e92" stroke-width="3"/>
+                  <circle cx="387" cy="142" r="2.5" fill="#278e92"/>
+                  <rect x="67" y="237" width="345" height="59" rx="10" fill="#f9fdfa" stroke="#b2cdc4"/>
+                  <path d="M85 275l35-8 30 5 35-19 36 13 38-31 34 12 33-8 35 20 34-15" fill="none" stroke="#399b99" stroke-width="3"/>
+                  <text class="diagram-label" x="75" y="85">
+                    MEDICIÓN
+                  </text>
+                  <text class="diagram-label" x="218" y="94">
+                    SEÑAL
+                  </text>
+                  <text class="diagram-label" x="348" y="85">
+                    ALERTA
+                  </text>
+                </svg>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="formacion" aria-labelledby="titulo-formacion">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">
+                05 / La profundidad · Mi formación
+              </div>
+              <h2 id="titulo-formacion">
+                Profundidad técnica.
+                <br>
+                Aprendizaje constante.
+              </h2>
+            </div>
+            <p>
+              La práctica se nutre del aprendizaje: ciencia de datos, programación y ciberseguridad como base para seguir construyendo.
+            </p>
+          </div>
+          <div class="education">
+            <details class="credential-group" open>
+              <summary>
+                <span>
+                  Datos e inteligencia artificial
+                </span>
+                <span class="count">
+                  07 credenciales
+                  <span class="chevron">
+                    ↗
+                  </span>
+                </span>
+              </summary>
+              <div class="credential-list">
+                <div class="credential">
+                  <strong>
+                    Data Science
+                  </strong>
+                  <span>
+                    Universidad de Chile · 2026
+                  </span>
+                </div>
+                <div class="credential">
+                  <strong>
+                    Machine Learning with Python Essentials
+                  </strong>
+                  <span>
+                    Universidad de Chile · 2026
+                  </span>
+                </div>
+                <div class="credential">
+                  <strong>
+                    Foundations of Data Science
+                  </strong>
+                  <span>
+                    Google · 2026
+                  </span>
+                </div>
+                <div class="credential">
+                  <strong>
+                    Foundations: Data, Data, Everywhere
+                  </strong>
+                  <span>
+                    Google · 2026
+                  </span>
+                </div>
+                <div class="credential">
+                  <strong>
+                    Power BI Intermedio: Análisis y modelado de datos
+                  </strong>
+                  <span>
+                    Santander Open Academy · 2026
+                  </span>
+                </div>
+                <div class="credential">
+                  <strong>
+                    AI Skills Fest 2026
+                  </strong>
+                  <span>
+                    Microsoft · 2026
+                  </span>
+                </div>
+                <div class="credential">
+                  <strong>
+                    Crear valor con IA, automatización y bots
+                  </strong>
+                  <span>
+                    Santander Open Academy · 2026
+                  </span>
+                </div>
+              </div>
+            </details>
+            <details class="credential-group" >
+              <summary>
+                <span>
+                  Ciberseguridad
+                </span>
+                <span class="count">
+                  04 credenciales
+                  <span class="chevron">
+                    ↗
+                  </span>
+                </span>
+              </summary>
+              <div class="credential-list">
+                <div class="credential">
+                  <strong>
+                    Foundations of Cybersecurity
+                  </strong>
+                  <span>
+                    Google · 2025
+                  </span>
+                </div>
+                <div class="credential">
+                  <strong>
+                    Introduction to Cybersecurity
+                  </strong>
+                  <span>
+                    Cisco · 2026
+                  </span>
+                </div>
+                <div class="credential">
+                  <strong>
+                    Curso CompTIA Security+ SY0-601
+                  </strong>
+                  <span>
+                    LinkedIn Learning · 2025
+                  </span>
+                </div>
+                <div class="credential">
+                  <strong>
+                    GDPR Foundations
+                  </strong>
+                  <span>
+                    Measured Collective · 2026
+                  </span>
+                </div>
+              </div>
+            </details>
+            <details class="credential-group" >
+              <summary>
+                <span>
+                  Programación y herramientas
+                </span>
+                <span class="count">
+                  07 credenciales
+                  <span class="chevron">
+                    ↗
+                  </span>
+                </span>
+              </summary>
+              <div class="credential-list">
+                <div class="credential">
+                  <strong>
+                    Introducción a la programación en Python
+                  </strong>
+                  <span>
+                    Coursera · 2024
+                  </span>
+                </div>
+                <div class="credential">
+                  <strong>
+                    Python
+                  </strong>
+                  <span>
+                    Udemy · 2024
+                  </span>
+                </div>
+                <div class="credential">
+                  <strong>
+                    Lua
+                  </strong>
+                  <span>
+                    Udemy · 2023
+                  </span>
+                </div>
+                <div class="credential">
+                  <strong>
+                    Lógica de Programación
+                  </strong>
+                  <span>
+                    Alkemy · 2026
+                  </span>
+                </div>
+                <div class="credential">
+                  <strong>
+                    Razonamiento Lógico (Avanzado)
+                  </strong>
+                  <span>
+                    Alkemy · 2026
+                  </span>
+                </div>
+                <div class="credential">
+                  <strong>
+                    Excel (Sin Macros)
+                  </strong>
+                  <span>
+                    Alkemy · 2026
+                  </span>
+                </div>
+                <div class="credential">
+                  <strong>
+                    TOEIC Bridge® Listening and Reading
+                  </strong>
+                  <span>
+                    TOEIC Program · 2026
+                  </span>
+                </div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+      <section class="contact" id="contacto" aria-labelledby="titulo-contacto">
+        <div class="container">
+          <div class="contact-card">
+            <div>
+              <div class="eyebrow eyebrow-light">
+                06 / La próxima conexión
+              </div>
+              <h2 id="titulo-contacto">
+                Que la próxima idea
+                <br>
+                también encuentre su cauce.
+              </h2>
+              <p>
+                Me interesan los desafíos donde datos, IA y ciberseguridad puedan mejorar la gestión de infraestructura hídrica.
+              </p>
+            </div>
+            <div class="contact-side">
+              <span class="contact-kicker">
+                ÁREAS DE COLABORACIÓN
+              </span>
+              <strong>
+                Datos con aplicación real.
+              </strong>
+              <p>
+                Trazabilidad de activos, visualización y automatización para la gestión de emergencias y recursos hídricos.
+              </p>
+              <div class="contact-links" id="contactLinks" hidden>
+              </div>
+              <a class="contact-return" href="#proyectos">
+                Conoce mi trabajo
+                <span aria-hidden="true">
+                  ↗
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <span>
+          © 2026 Raúl Guzmán
+        </span>
+        <a href="#inicio">
+          Volver al origen ↑
+        </a>
+      </div>
+    </footer>
+    <script type="module" src="./assets/js/main.js">
+    </script>
+  </body>
+</html>

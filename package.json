@@ -1,0 +1,18 @@
+{
+  "name": "raul-guzman-portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 3000",
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs"
+  },
+  "devDependencies": {
+    "vite": "8.0.13"
+  },
+  "version": "1.0.0",
+  "description": "Portafolio profesional de Raúl Guzmán: datos, agua y decisiones.",
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

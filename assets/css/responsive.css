@@ -1,0 +1,705 @@
+/* Adaptación a pantallas grandes, tablet y móvil. */
+@media(min-width:1500px) {
+  .container {
+    width: min(1320px,calc(100% - 112px))
+  }
+  .hero-visual {
+    height: 630px
+  }
+  .hero-inner {
+    min-height: 790px
+  }
+}
+@media(max-width:1100px) {
+  .container {
+    width: calc(100% - 56px)
+  }
+  .nav-links {
+    gap: 14px
+  }
+  .nav-links>a {
+    font-size: 13px
+  }
+  .hero-inner {
+    gap: 20px;
+    min-height: 675px;
+    padding: 58px 0
+  }
+  .hero h1 {
+    font-size: clamp(55px,6.2vw,73px)
+  }
+  .hero-visual {
+    height: 535px
+  }
+  .hero-lead {
+    font-size: 17px
+  }
+  .hero-object-pump {
+    left: -4%
+  }
+  .hero-caption {
+    max-width: 260px
+  }
+  .section-head {
+    gap: 45px
+  }
+  .journey-grid {
+    gap: 35px;
+    grid-template-columns: .75fr 1.25fr
+  }
+  .journey-scene {
+    min-height: 580px
+  }
+  .project-copy {
+    padding: 32px
+  }
+  .about-feature {
+    padding: 36px
+  }
+  .about-detail {
+    padding: 29px
+  }
+  .cap-card {
+    padding: 23px
+  }
+  .cap-card h3 {
+    font-size: 26px
+  }
+  .scene-top,.scene-bottom {
+    left: 18px;
+    right: 18px
+  }
+  .scene-label {
+    font-size: 11px;
+    max-width: 170px
+  }
+  .scene-bottom {
+    gap: 10px
+  }
+  .stage-description {
+    font-size: 12px;
+    max-width: 205px
+  }
+}
+@media(max-width:980px) {
+  .nav-inner {
+    height: 76px
+  }
+  .nav-tools {
+    margin-left: auto
+  }
+  .menu-toggle {
+    display: block
+  }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    background: #f2faf4f7;
+    backdrop-filter: blur(14px);
+    padding: 16px 28px 22px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    border-bottom: 1px solid #bed8ca;
+    max-height: calc(100dvh - 76px);
+    overflow: auto
+  }
+  .nav-links.open {
+    display: flex
+  }
+  .nav-links>a {
+    font-size: 16px;
+    padding: 12px 9px
+  }
+  .nav-links>a[aria-current="location"]:after {
+    display: none
+  }
+  .nav-links>a[aria-current="location"] {
+    color: #087c7d
+  }
+  .nav-cta {
+    margin-top: 6px;
+    text-align: center
+  }
+  .hero-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px
+  }
+  .hero h1 {
+    font-size: clamp(50px,6.7vw,65px)
+  }
+  .hero-visual {
+    height: 520px
+  }
+  .hero-lead {
+    font-size: 16px
+  }
+  .hero-caption {
+    left: 0;
+    bottom: 0;
+    max-width: 230px
+  }
+  .hero-caption strong {
+    font-size: 13px
+  }
+  .hero-object-pump {
+    width: 47%;
+    left: -7%;
+    top: 19%
+  }
+  .hero-object-valve {
+    width: 32%;
+    right: 2%;
+    top: 12%
+  }
+  .hero-object-tank {
+    width: 31%;
+    right: 3%;
+    bottom: 15%
+  }
+  .object-label {
+    font-size: 11px;
+    padding: 4px 8px
+  }
+  .object-label b {
+    font-size: 10px
+  }
+  .hero-trail {
+    gap: 9px
+  }
+  .hero-trail i {
+    width: 20px
+  }
+  .metric {
+    padding: 22px 14px
+  }
+  .metric span {
+    font-size: 13px
+  }
+  .about-grid {
+    grid-template-columns: 1fr 1fr
+  }
+  .cap-grid {
+    grid-template-columns: repeat(2,1fr)
+  }
+  .journey-grid {
+    gap: 35px;
+    grid-template-columns: 1fr
+  }
+  .journey-copy {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+    align-items: start
+  }
+  .journey-copy>.eyebrow,.journey-copy>h3,.journey-copy>p,.journey-copy>.story-return {
+    grid-column: 1
+  }
+  .journey-copy .stage-list {
+    grid-column: 2;
+    grid-row: 1/5;
+    margin-top: 0
+  }
+  .journey-copy p {
+    min-height: 0
+  }
+  .journey-copy h3 {
+    font-size: 38px
+  }
+  .journey-scene {
+    min-height: 570px
+  }
+  .scene-label {
+    font-size: 12px;
+    max-width: none
+  }
+  .scene-object-display {
+    left: 6%;
+    top: 12%;
+    width: 40%;
+    height: 45%
+  }
+  .stage-description {
+    font-size: 13px;
+    max-width: 280px
+  }
+  .scene-top,.scene-bottom {
+    left: 25px;
+    right: 25px
+  }
+  .scene-note {
+    text-align: left
+  }
+  .contact-card {
+    padding: 43px;
+    gap: 30px
+  }
+  .world-svg {
+    --world-x: 0px;
+    width: 1440px;
+    max-width: none;
+    margin-left: calc((100% - 1440px)/2)
+  }
+}
+@media(max-width:700px) {
+  .container {
+    width: calc(100% - 38px)
+  }
+  .nav-inner {
+    height: 70px;
+    gap: 12px
+  }
+  .nav-links {
+    top: 70px;
+    padding-inline: 20px;
+    max-height: calc(100dvh - 70px)
+  }
+  .logo {
+    font-size: 17px
+  }
+  .logo small {
+    font-size: 10px
+  }
+  .motion-master {
+    padding: 8px 10px;
+    min-height: 42px
+  }
+  .motion-master span {
+    font-size: 11px
+  }
+  .menu-toggle {
+    padding: 9px 12px
+  }
+  .nav-tools {
+    gap: 7px
+  }
+  .hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 51px 0 25px;
+    gap: 10px;
+    min-height: 0
+  }
+  .hero h1 {
+    font-size: clamp(47px,11.6vw,70px);
+    line-height: 1.05;
+    max-width: 620px;
+    margin: 20px 0 23px
+  }
+  .hero .eyebrow {
+    font-size: 11px;
+    letter-spacing: .1em;
+    max-width: 340px
+  }
+  .hero-lead {
+    font-size: 17px;
+    line-height: 1.85;
+    max-width: 570px
+  }
+  .hero-buttons {
+    margin-top: 25px
+  }
+  .button {
+    font-size: 14px;
+    min-height: 48px;
+    padding: 11px 19px
+  }
+  .hero-trail {
+    font-size: 12px;
+    margin-top: 22px;
+    gap: 14px
+  }
+  .hero-trail i {
+    width: 27px
+  }
+  .hero-visual {
+    height: 485px;
+    width: min(100%,540px);
+    align-self: center;
+    margin: 8px 0 0
+  }
+  .hero-visual:after {
+    inset: 3% 1%
+  }
+  .hero-caption {
+    max-width: 270px;
+    bottom: 4px;
+    left: 0;
+    padding: 12px 15px
+  }
+  .hero-caption strong {
+    font-size: 14px
+  }
+  .hero-caption span {
+    font-size: 12px
+  }
+  .hero-object-pump {
+    width: 43%;
+    left: 0;
+    top: 13%
+  }
+  .hero-object-valve {
+    width: 29%;
+    right: 1%;
+    top: 5%
+  }
+  .hero-object-tank {
+    width: 29%;
+    right: 6%;
+    bottom: 14%
+  }
+  .object-label {
+    font-size: 12px
+  }
+  .hero-map-label {
+    right: 0;
+    font-size: 10px;
+    bottom: 42%
+  }
+  .hero:before {
+    background: linear-gradient(180deg,#f5faf4e6 0%,#f5faf4dc 42%,#f5faf43b 75%,#f5faf430)
+  }
+  .hydraulic-world {
+    height: 4400px;
+    opacity: .66
+  }
+  .world-svg {
+    height: 4400px;
+    width: 1200px;
+    margin-left: calc((100% - 1200px)/2);
+    --world-x: 0px;
+    transform: translate3d(0,var(--world-y,0px),0)!important
+  }
+  .metric-grid {
+    grid-template-columns: 1fr 1fr
+  }
+  .metric {
+    padding: 21px 13px;
+    border-bottom: 1px solid var(--line)
+  }
+  .metric:first-child {
+    padding-left: 13px
+  }
+  .metric:nth-child(2) {
+    border-right: 0
+  }
+  .metric:nth-child(n+3) {
+    border-bottom: 0
+  }
+  .metric strong {
+    font-size: 11px
+  }
+  .metric span {
+    font-size: 13px;
+    line-height: 1.65
+  }
+  .section {
+    padding: 74px 0
+  }
+  .section-head {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 33px
+  }
+  .section-head h2 {
+    font-size: clamp(37px,8.9vw,51px);
+    line-height: 1.13
+  }
+  .section-head p {
+    font-size: 16px;
+    line-height: 1.85
+  }
+  .eyebrow {
+    font-size: 12px
+  }
+  .about-grid {
+    grid-template-columns: 1fr
+  }
+  .about-feature {
+    padding: 32px 29px
+  }
+  .about-feature h3 {
+    font-size: 30px
+  }
+  .about-feature p,.detail p {
+    font-size: 16px
+  }
+  .about-quote {
+    font-size: 23px!important
+  }
+  .about-detail {
+    padding: 23px 27px
+  }
+  .cap-grid {
+    grid-template-columns: 1fr;
+    gap: 18px
+  }
+  .cap-card {
+    min-height: 0;
+    padding: 25px 28px 21px
+  }
+  .cap-card h3 {
+    font-size: 30px
+  }
+  .cap-card p {
+    font-size: 16px
+  }
+  .cap-top {
+    font-size: 12px
+  }
+  .cap-bottom {
+    font-size: 14px
+  }
+  .semantic-art {
+    height: 186px!important;
+    margin-top: 8px!important;
+    margin-bottom: 10px!important
+  }
+  .semantic-art svg {
+    height: 180px!important
+  }
+  .journey {
+    padding: 73px 0
+  }
+  .journey-copy {
+    display: block
+  }
+  .journey-copy h3 {
+    font-size: 36px;
+    margin-top: 12px
+  }
+  .journey-copy p {
+    font-size: 16px;
+    min-height: 100px
+  }
+  .journey-copy .stage-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+    margin-top: 23px
+  }
+  .stage {
+    padding: 13px 12px;
+    min-height: 49px
+  }
+  .stage span {
+    font-size: 12px
+  }
+  .stage strong {
+    font-size: 14px
+  }
+  .stage-list .stage:last-child {
+    grid-column: 1/-1
+  }
+  .story-return {
+    font-size: 13px;
+    margin-top: 17px
+  }
+  .journey-grid {
+    gap: 29px
+  }
+  .journey-scene {
+    min-height: 550px;
+    border-radius: 13px
+  }
+  .scene-top {
+    top: 20px;
+    left: 17px;
+    right: 17px;
+    gap: 9px;
+    flex-wrap: wrap
+  }
+  .scene-label {
+    font-size: 11px;
+    line-height: 1.6;
+    max-width: 145px
+  }
+  .scene-badge {
+    font-size: 11px;
+    padding: 7px 9px
+  }
+  .scene-bottom {
+    bottom: 19px;
+    left: 18px;
+    right: 18px;
+    gap: 14px;
+    flex-direction: column;
+    align-items: flex-start
+  }
+  .stage-description {
+    max-width: 300px;
+    font-size: 13px;
+    line-height: 1.7
+  }
+  .motion-controls button {
+    font-size: 12px;
+    min-height: 42px
+  }
+  .scene-object-display {
+    left: 6%;
+    top: 18%;
+    width: 48%;
+    height: 31%
+  }
+  .scene-hit {
+    display: none
+  }
+  .scene-note {
+    font-size: 12px;
+    line-height: 1.75
+  }
+  .project {
+    grid-template-columns: 1fr;
+    border-radius: 13px
+  }
+  .project-copy {
+    padding: 31px 27px
+  }
+  .project h3 {
+    font-size: 34px
+  }
+  .project p {
+    font-size: 16px
+  }
+  .project-visual {
+    min-height: 315px;
+    padding: 18px
+  }
+  .project:nth-child(even) .project-visual {
+    order: 0
+  }
+  .project-outcome {
+    grid-template-columns: 1fr
+  }
+  .project-outcome div {
+    padding: 13px 16px
+  }
+  .project-outcome b {
+    font-size: 11px
+  }
+  .project-outcome span {
+    font-size: 14px
+  }
+  .education {
+    grid-template-columns: 1fr
+  }
+  .credential-group summary {
+    font-size: 15px;
+    padding: 21px
+  }
+  .credential-list {
+    padding: 0 21px 14px
+  }
+  .credential {
+    grid-template-columns: 1fr;
+    gap: 5px;
+    padding: 17px 0
+  }
+  .credential strong {
+    font-size: 15px
+  }
+  .credential span {
+    text-align: left;
+    font-size: 13px
+  }
+  .count {
+    font-size: 11px
+  }
+  .contact {
+    padding: 61px 0
+  }
+  .contact-card {
+    grid-template-columns: 1fr;
+    padding: 34px 28px;
+    gap: 26px
+  }
+  .contact-card h2 {
+    font-size: 39px
+  }
+  .contact-side {
+    padding-left: 21px;
+    font-size: 14px
+  }
+  .footer {
+    padding: 23px 0 30px;
+    font-size: 12px
+  }
+  .footer .container {
+    gap: 12px
+  }
+  .scene-asset .world-svg text {
+    font-size: 12px
+  }
+}
+@media(max-width:370px) {
+  .container {
+    width: calc(100% - 32px)
+  }
+  .motion-master span {
+    display: none
+  }
+  .motion-master {
+    width: 42px;
+    justify-content: center
+  }
+  .hero h1 {
+    font-size: 45px
+  }
+  .hero-visual {
+    height: 445px
+  }
+  .hero-object-pump {
+    width: 46%;
+    left: -2%;
+    top: 16%
+  }
+  .hero-object-valve {
+    width: 32%;
+    right: 0;
+    top: 7%
+  }
+  .hero-object-tank {
+    width: 30%;
+    right: 4%;
+    bottom: 15%
+  }
+  .hero-caption {
+    max-width: 236px
+  }
+  .object-label {
+    font-size: 11px
+  }
+  .object-label b {
+    display: none
+  }
+  .cap-card {
+    padding-inline: 25px
+  }
+  .scene-label {
+    max-width: 130px
+  }
+  .journey-scene {
+    min-height: 540px
+  }
+  .stage strong {
+    font-size: 13px
+  }
+  .stage span {
+    font-size: 11px
+  }
+}
+@media(max-width:700px) {
+  .footer .container {
+    flex-direction: column
+  }
+  .contact-side strong {
+    font-size: 26px
+  }
+  .contact-card .contact-side p {
+    font-size: 14px
+  }
+}

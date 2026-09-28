@@ -1,0 +1,95 @@
+/* Acceso con teclado, movimiento opcional y contenido visible sin JavaScript. */
+.skip-link {
+  position: fixed;
+  left: 16px;
+  top: 12px;
+  z-index: 300;
+  background: var(--deep);
+  color: white;
+  padding: 12px 20px;
+  transform: translateY(-200%);
+  border-radius: 5px;
+}
+.skip-link:focus {
+  transform: none;
+}
+.motion-paused *, .motion-paused *::before, .motion-paused *::after,
+.document-hidden *, .document-hidden *::before, .document-hidden *::after,
+.offscreen-motion *, .offscreen-motion *::before, .offscreen-motion *::after {
+  animation-play-state: paused !important;
+}
+.motion-paused .hero-object:hover, .motion-paused .cap-card:hover {
+  transform: none;
+}
+.motion-paused *, .motion-paused *::before, .motion-paused *::after {
+  transition: none !important;
+}
+.motion-paused .reveal:not(.revealed) {
+  opacity: 1;
+  transform: none;
+}
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+.motion-ready .reveal:not(.revealed) {
+  opacity: 0;
+  transform: translateY(16px);
+}
+.motion-ready .reveal {
+  transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal, .motion-ready .reveal:not(.revealed) {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .hero-object:hover, .cap-card:hover, .world-svg {
+    transform: none !important;
+  }
+}
+@media print {
+  .nav, .hero-visual, .hydraulic-world, .motion-controls, .stage-list, .hero-trail {
+    display: none;
+  }
+  body {
+    background: white;
+  }
+  .container {
+    width: 100%;
+  }
+  .section, .journey, .contact {
+    padding: 30px 0;
+  }
+  .hero-inner {
+    min-height: 0;
+    display: block;
+    padding: 25px 0;
+  }
+  .hero h1 {
+    font-size: 42px;
+  }
+  .hero::before {
+    display: none;
+  }
+  .hero-metrics {
+    background: white;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .section-head h2 {
+    font-size: 34px;
+  }
+  .cap-card, .project, .credential-group {
+    break-inside: avoid;
+  }
+}

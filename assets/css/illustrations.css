@@ -1,0 +1,782 @@
+/* Ilustraciones hidráulicas originales: trazos, superficies y microinteracciones. */
+.s2 {
+  animation-delay: .55s
+}
+.diagram-label {
+  font: 600 11px var(--sans);
+  fill: #476d6a
+}
+.diagram-flow {
+  fill: none;
+  stroke: #309b9c;
+  stroke-width: 3;
+  stroke-dasharray: 5 12;
+  animation: flow 1.5s linear infinite
+}
+.diagram-pipe {
+  fill: none;
+  stroke: #a7c6bd;
+  stroke-width: 17;
+  stroke-linecap: round;
+  stroke-linejoin: round
+}
+.diagram-node {
+  fill: #f8fdfa;
+  stroke: #618d85;
+  stroke-width: 2
+}
+.diagram-ring {
+  fill: none;
+  stroke: #38989a;
+  stroke-width: 2;
+  animation: signal 2s ease-in-out infinite;
+  transform-origin: center
+}
+.cap-card svg .flow, .project svg .flow {
+  animation-duration: 1.65s!important
+}
+.ui-panel, .dev-screen {
+  fill: #f9fcfa;
+  stroke: #789e99;
+  stroke-width: 1.5
+}
+.ui-head {
+  fill: none;
+  stroke: #668e89;
+  stroke-width: 5;
+  stroke-linecap: round
+}
+.status-dot {
+  fill: #3b9e96;
+  animation: semPulse 2.2s ease-in-out infinite
+}
+.kpi rect {
+  fill: #edf6f2;
+  stroke: #bfd5cf
+}
+.mini-bars {
+  fill: none;
+  stroke: #3b9993;
+  stroke-width: 3
+}
+.drop-mini {
+  fill: #55b9b2
+}
+.meter-bg {
+  stroke: #c2d9d3;
+  stroke-width: 4;
+  stroke-linecap: round
+}
+.meter-live {
+  stroke: #3aa39d;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 34 49;
+  animation: meter 2.8s ease-in-out infinite
+}
+.chart-grid {
+  fill: none;
+  stroke: #d9e7e2;
+  stroke-width: 1
+}
+.water-chart {
+  fill: none;
+  stroke: #238c91;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 260;
+  animation: drawLine 3.8s ease-in-out infinite alternate
+}
+.chart-cursor {
+  fill: #fff;
+  stroke: #238c91;
+  stroke-width: 2
+}
+.chart-scan {
+  stroke: rgba(35,140,145,.28);
+  stroke-width: 1;
+  animation: scanX 3.8s ease-in-out infinite alternate;
+  transform-origin: 156px 0
+}
+.ml-axis {
+  fill: none;
+  stroke: #b9cfca;
+  stroke-width: 1.5
+}
+.ml-band {
+  fill: rgba(72,174,165,.12)
+}
+.ml-line {
+  fill: none;
+  stroke: #3d9d97;
+  stroke-width: 2.5
+}
+.ml-anomaly-line {
+  fill: none;
+  stroke: #1c7e8c;
+  stroke-width: 3;
+  stroke-linecap: round
+}
+.ml-anomaly {
+  fill: #fff;
+  stroke: #1c7e8c;
+  stroke-width: 3
+}
+.ml-ring {
+  fill: none;
+  stroke: rgba(35,143,145,.35);
+  animation: semRing 2.4s ease-out infinite;
+  transform-origin: 198px 42px
+}
+.ml-nodes circle {
+  fill: #3d9d97
+}
+.ml-label {
+  fill: #e7f3ef
+}
+.ml-label-line {
+  stroke: #6a9791;
+  stroke-width: 2;
+  stroke-linecap: round
+}
+.donut-bg, .donut-live {
+  fill: none;
+  stroke-width: 12
+}
+.donut-bg {
+  stroke: #dceae5
+}
+.donut-live {
+  stroke: #319a94;
+  stroke-dasharray: 132 183;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: 0 0;
+  animation: donut 3.2s ease-in-out infinite
+}
+.bi-bars rect {
+  fill: #78bbb2;
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: barLive 3.2s ease-in-out infinite
+}
+.bi-bars rect:nth-child(2) {
+  animation-delay: .15s
+}
+.bi-bars rect:nth-child(3) {
+  animation-delay: .3s
+}
+.bi-bars rect:nth-child(4) {
+  animation-delay: .45s
+}
+.bi-bars rect:nth-child(5) {
+  animation-delay: .6s
+}
+.bi-level {
+  stroke: #c9ddd7;
+  stroke-width: 4;
+  stroke-linecap: round
+}
+.bi-knob {
+  fill: #288d8d;
+  animation: knob 3.6s ease-in-out infinite
+}
+.bi-wave {
+  fill: none;
+  stroke: #4ba9a2;
+  stroke-width: 2
+}
+.dev-code, .dev-bracket {
+  fill: none;
+  stroke: #67938d;
+  stroke-width: 3;
+  stroke-linecap: round
+}
+.dev-api {
+  fill: #d9eeea;
+  stroke: #5b918c;
+  stroke-width: 2
+}
+.dev-text {
+  font: 700 12px system-ui;
+  fill: #2d7474
+}
+.dev-db {
+  fill: #edf7f3;
+  stroke: #6b9892;
+  stroke-width: 2
+}
+.dev-link {
+  stroke: #b3cec8;
+  stroke-width: 3
+}
+.dev-packet {
+  fill: #2d9691
+}
+.p1 {
+  animation: packetA 2s linear infinite
+}
+.p2 {
+  animation: packetB 2s linear infinite
+}
+.dev-water {
+  fill: none;
+  stroke: #4aa9a2;
+  stroke-width: 2
+}
+.trace-pipe {
+  fill: none;
+  stroke: #c2d9d4;
+  stroke-width: 11;
+  stroke-linejoin: round
+}
+.trace-flow {
+  fill: none;
+  stroke: #3ca29c;
+  stroke-width: 2.5;
+  stroke-dasharray: 7 10;
+  animation: traceFlow 1.5s linear infinite
+}
+.trace-nodes circle {
+  fill: #f7fcfa;
+  stroke: #608e89;
+  stroke-width: 2
+}
+.trace-active {
+  fill: #2f9590;
+  stroke: #fff;
+  stroke-width: 3
+}
+.trace-ring {
+  fill: none;
+  stroke: rgba(47,149,144,.32);
+  animation: semRing 2.5s ease-out infinite;
+  transform-origin: 134px 42px
+}
+.trace-tag {
+  fill: #e5f2ee
+}
+.trace-tag-line {
+  stroke: #6b9690;
+  stroke-width: 2
+}
+.trace-packet {
+  stroke: #fff;
+  stroke-width: 2.5;
+  animation: tracePacket 2.2s linear infinite
+}
+.cyber-shield {
+  fill: rgba(248,253,251,.75);
+  stroke: #4a9996;
+  stroke-width: 2
+}
+.cyber-water {
+  animation: waterLevel 5s ease-in-out infinite;
+  transform-origin: center bottom
+}
+.cyber-wave {
+  fill: none;
+  stroke: rgba(244,255,252,.85);
+  stroke-width: 2;
+  animation: waveMove 3.2s ease-in-out infinite alternate
+}
+.cyber-wave.w2 {
+  opacity: .45;
+  animation-duration: 4.4s
+}
+.cyber-edge {
+  fill: none;
+  stroke: #d9fff8;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 20 190;
+  animation: cyberEdge 3s linear infinite
+}
+.cyber-aura {
+  fill: none;
+  stroke: rgba(48,151,147,.22);
+  stroke-width: 1.2;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: cyberAura 3.5s ease-out infinite
+}
+.cyber-aura.a2 {
+  animation-delay: 1.2s
+}
+.cyber-lock rect {
+  fill: rgba(245,255,252,.88);
+  stroke: #267f84;
+  stroke-width: 2
+}
+.cyber-lock path {
+  fill: none;
+  stroke: #267f84;
+  stroke-width: 3
+}
+.cyber-lock circle {
+  fill: #267f84
+}
+.cyber-nodes circle {
+  fill: #eafff9;
+  stroke: #2e8f8c;
+  stroke-width: 2
+}
+.cyber-nodes path {
+  fill: none;
+  stroke: rgba(46,143,140,.4);
+  stroke-width: 1.5;
+  stroke-dasharray: 3 5;
+  animation: traceFlow 1.7s linear infinite
+}
+@media(hover:hover) and (pointer:fine) {
+  .cap-card:hover .cyber-edge {
+    animation-duration: 2.15s
+  }
+  .cap-card:hover .trace-flow {
+    animation-duration: 1s
+  }
+  .cap-card:hover .water-chart {
+    animation-duration: 2.6s
+  }
+}
+.analytics-pulse {
+  fill: #2d9691;
+  animation: analyticsBlink 1.8s ease-in-out infinite
+}
+.analytics-ripple {
+  fill: none;
+  stroke: #2d9691;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  transform-origin: 216px 68px;
+  animation: analyticsRipple 2.2s ease-out infinite
+}
+.chart-cursor {
+  animation: cursorTravel 3.8s ease-in-out infinite alternate
+}
+.ml-band {
+  transform-origin: center;
+  animation: confidenceBreathe 4.6s ease-in-out infinite
+}
+.ml-line {
+  stroke-dasharray: 280;
+  animation: modelDraw 4.2s ease-in-out infinite
+}
+.ml-inference {
+  animation: inferenceTravel 4.2s cubic-bezier(.35,.05,.3,1) infinite
+}
+.ml-scanline {
+  stroke: #278d8e;
+  stroke-width: 1.3;
+  stroke-dasharray: 3 5;
+  opacity: .48
+}
+.ml-sample {
+  fill: #278d8e
+}
+.ml-sample.s2 {
+  opacity: .4
+}
+.ml-alert rect {
+  fill: #e1f1ed;
+  stroke: #7db0aa;
+  stroke-width: 1
+}
+.ml-alert circle {
+  fill: #248c8c
+}
+.ml-alert path {
+  stroke: #5d8e89;
+  stroke-width: 2;
+  stroke-linecap: round
+}
+.ml-alert {
+  transform-origin: 205px 26px;
+  animation: alertState 4.2s ease-in-out infinite
+}
+.ml-anomaly {
+  animation: anomalyHit 4.2s ease-in-out infinite
+}
+.ml-ring {
+  animation: anomalyRing 4.2s ease-out infinite
+}
+.bi-filters rect {
+  fill: #dcece7;
+  animation: filterCycle 4.8s ease-in-out infinite
+}
+.bi-filters rect:nth-child(2) {
+  animation-delay: .35s
+}
+.bi-filters rect:nth-child(3) {
+  animation-delay: .7s
+}
+.bi-live {
+  fill: #2f9892;
+  animation: analyticsBlink 1.7s ease-in-out infinite
+}
+.bi-wave {
+  stroke-dasharray: 85;
+  animation: biWave 3s linear infinite
+}
+.api-pulse {
+  fill: none;
+  stroke: rgba(45,150,145,.28);
+  stroke-width: 1.5;
+  transform-origin: 147px 75px;
+  animation: apiPulse 2.3s ease-out infinite
+}
+.db-status {
+  stroke: #2f9993;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 20;
+  animation: dbStatus 2.6s ease-in-out infinite
+}
+.dev-code {
+  stroke-dasharray: 60;
+  animation: codeWrite 4s ease-in-out infinite
+}
+.trace-packet-2 {
+  animation-delay: 1.05s!important;
+  opacity: .55
+}
+.trace-beacon {
+  fill: none;
+  stroke: #3a9e98;
+  stroke-width: 1.5;
+  transform-origin: 201px 89px;
+  animation: beacon 2.5s ease-out infinite
+}
+.cyber-check {
+  fill: none;
+  stroke: #167b82;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 35;
+  animation: verifyCheck 3.4s ease-in-out infinite
+}
+.cyber-verify {
+  fill: none;
+  stroke: rgba(38,139,137,.28);
+  stroke-width: 1.5;
+  transform-origin: 140px 94px;
+  animation: verifyRing 3.4s ease-out infinite
+}
+@media(hover:hover) and (pointer:fine) {
+  .ml-art:hover .ml-inference, .cap-card:hover .ml-inference {
+    animation-duration: 2.8s
+  }
+  .analytics-art:hover .water-chart, .cap-card:hover .analytics-art .water-chart {
+    animation-duration: 2.5s
+  }
+  .bi-art:hover .bi-bars rect, .cap-card:hover .bi-art .bi-bars rect {
+    animation-duration: 2.25s
+  }
+  .dev-art:hover .dev-packet, .cap-card:hover .dev-art .dev-packet {
+    animation-duration: 1.25s
+  }
+  .trace-art:hover .trace-flow, .cap-card:hover .trace-art .trace-flow {
+    animation-duration: .9s
+  }
+  .cyber-art:hover .cyber-edge, .cap-card:hover .cyber-art .cyber-edge {
+    animation-duration: 1.9s
+  }
+}
+.world-hill.far {
+  opacity: .42
+}
+.world-hill.near {
+  opacity: .47
+}
+.world-river {
+  opacity: .4
+}
+.world-river-light {
+  fill: none;
+  stroke: rgba(242,255,251,.78);
+  stroke-width: 5;
+  stroke-dasharray: 38 26;
+  animation: worldRiver 5s linear infinite
+}
+.world-pipe.shadow {
+  fill: none;
+  stroke: rgba(16,58,55,.09);
+  stroke-width: 34
+}
+.world-pipe.base {
+  fill: none;
+  stroke: #66837c;
+  stroke-width: 20;
+  stroke-linecap: round
+}
+.world-pipe.flow {
+  fill: none;
+  stroke: #2b9c9b;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 18 18;
+  animation: worldFlow 1.45s linear infinite
+}
+.station-shell {
+  fill: #e8f0ec;
+  stroke: #4d746d;
+  stroke-width: 2
+}
+.station-roof {
+  fill: #607f77;
+  stroke: #426962;
+  stroke-width: 2
+}
+.world-pump>circle:first-child {
+  fill: #f6faf7;
+  stroke: #466f69;
+  stroke-width: 3
+}
+.world-impeller {
+  fill: none;
+  stroke: #248f91;
+  stroke-width: 3;
+  stroke-dasharray: 7 4;
+  animation: worldImpeller 1.9s linear infinite;
+  transform-box: fill-box;
+  transform-origin: center
+}
+.world-impeller.reverse {
+  animation-direction: reverse;
+  animation-duration: 2.25s
+}
+.world-pump path {
+  stroke: #286f6d;
+  stroke-width: 2
+}
+.station-header {
+  fill: none;
+  stroke: #5e7e77;
+  stroke-width: 8;
+  stroke-linecap: round
+}
+.wv-pipe {
+  stroke: #637f79;
+  stroke-width: 18
+}
+.wv-body {
+  fill: #d7e4de;
+  stroke: #3f6761;
+  stroke-width: 2
+}
+.wv-stem {
+  stroke: #3f6761;
+  stroke-width: 4
+}
+.wv-actuator {
+  fill: #edf4f0;
+  stroke: #3f6761;
+  stroke-width: 2
+}
+.wv-pilot {
+  fill: none;
+  stroke: #527a73;
+  stroke-width: 2
+}
+.wv-pilot-node {
+  fill: #e8f1ed;
+  stroke: #3f6d67;
+  stroke-width: 2
+}
+.wt-bowl {
+  fill: #e0eae5;
+  stroke: #4d716b;
+  stroke-width: 2
+}
+.wt-water {
+  stroke: #32a09e;
+  stroke-width: 6;
+  stroke-dasharray: 19 10;
+  animation: worldFlow 2s linear infinite
+}
+.wt-leg {
+  fill: none;
+  stroke: #617f79;
+  stroke-width: 7
+}
+.world-pcp rect {
+  fill: #edf3ef;
+  stroke: #476f69;
+  stroke-width: 2
+}
+.wp-gauge {
+  fill: #fff;
+  stroke: #456e69;
+  stroke-width: 2
+}
+.wp-needle {
+  stroke: #218c8d;
+  stroke-width: 3;
+  transform-origin: 0 -15px;
+  animation: worldGauge 4s ease-in-out infinite
+}
+.wp-control {
+  fill: #bfd2cb;
+  stroke: #476f69;
+  stroke-width: 2
+}
+.wd-boundary {
+  fill: rgba(62,151,141,.045);
+  stroke: rgba(66,137,129,.65);
+  stroke-width: 2;
+  stroke-dasharray: 11 9
+}
+.wd-street {
+  fill: none;
+  stroke: rgba(216,229,223,.72);
+  stroke-width: 30;
+  stroke-linecap: round
+}
+.wd-network {
+  fill: none;
+  stroke: #738f89;
+  stroke-width: 8;
+  stroke-linecap: round
+}
+.wd-flow {
+  fill: none;
+  stroke: #3aa39f;
+  stroke-width: 2.8;
+  stroke-dasharray: 9 13;
+  animation: worldFlow 1.4s linear infinite
+}
+.wd-houses path {
+  fill: rgba(250,252,249,.82);
+  stroke: #718e88;
+  stroke-width: 1.5
+}
+.wd-meters circle {
+  fill: #f7fffc;
+  stroke: #258f8e;
+  stroke-width: 2
+}
+.wd-pulse {
+  fill: none;
+  stroke: #2b9692;
+  stroke-width: 2;
+  transform-origin: 970px 2860px;
+  animation: worldPulse 2.5s ease-out infinite
+}
+.world-telemetry path, .world-telemetry circle {
+  fill: none;
+  stroke: #3b716b;
+  stroke-width: 2
+}
+.world-telemetry circle {
+  fill: #2e9692
+}
+.wradio {
+  animation: worldRadio 2.4s ease-out infinite;
+  transform-origin: 0 3px
+}
+.wradio.b {
+  animation-delay: .55s
+}
+.world-river {
+  opacity: .57
+}
+.world-hill.far {
+  opacity: .4
+}
+.world-hill.near {
+  opacity: .4
+}
+.world-river-light {
+  stroke-width: 6
+}
+.world-pipe.base {
+  stroke: #819f93;
+  opacity: .72
+}
+.world-pipe.flow {
+  opacity: .9
+}
+.scene-asset {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px) scale(.96);
+  transition: opacity .5s ease,transform .65s cubic-bezier(.2,.7,.2,1),visibility .5s;
+  overflow: visible;
+  filter: drop-shadow(0 16px 14px #082c343a)
+}
+.scene-asset.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none
+}
+.scene-asset .station-shell {
+  fill: #d8eae2;
+  stroke: #91bab0
+}
+.scene-asset .station-roof {
+  fill: #4c817e;
+  stroke: #85b4aa
+}
+.scene-asset .wv-pipe {
+  stroke: #8cb8aa
+}
+.scene-asset .wv-body {
+  fill: #cae3d8;
+  stroke: #76aa9d
+}
+.scene-asset .wv-stem, .scene-asset .wv-pilot {
+  stroke: #93c4b5
+}
+.scene-asset .wv-actuator, .scene-asset .wv-pilot-node {
+  fill: #d6eadd;
+  stroke: #8bb9aa
+}
+.scene-asset .world-telemetry path {
+  stroke: #b2decf
+}
+.scene-asset .world-pcp rect {
+  fill: #d7eadf;
+  stroke: #96c7b7
+}
+.scene-asset .wd-boundary {
+  fill: #4a96931b;
+  stroke: #8dd4c088
+}
+.scene-asset .wd-street {
+  stroke: #315c6040
+}
+.scene-asset .wd-network {
+  stroke: #82aaa3
+}
+.scene-asset .wd-houses path {
+  fill: #dceae0;
+  stroke: #8dc1b2
+}
+.scene-asset .world-hill.far {
+  opacity: .5
+}
+.scene-asset .world-hill.near {
+  opacity: .7
+}
+.scene-asset .world-river {
+  opacity: .9
+}
+.scene-asset .world-river-light {
+  stroke-width: 10px
+}
+.diagram-label {
+  font-size: 12px
+}
+.wv-actuator {
+  animation: actuatorTravel 5.5s ease-in-out infinite
+}
+.wv-pilot-node {
+  animation: pilotPressure 5.5s ease-in-out infinite
+}
+.wt-water {
+  animation: worldFlow 2s linear infinite,reservoirLevel 6s ease-in-out infinite
+}
