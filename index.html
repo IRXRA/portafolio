@@ -54,12 +54,27 @@
             <path class="station-header" d="M-45 95v35h80V95M35 130h88" />
           </g>
           <g class="world-valve" id="water-asset-valve">
-            <path class="wv-pipe" d="M-82 0h50M32 0h74" />
-            <path class="wv-body" d="M-34-28L0 0l-34 28h68L0 0l34-28z" />
-            <path class="wv-stem" d="M0-28v-39" />
-            <rect class="wv-actuator" x="-31" y="-91" width="62" height="25" rx="9" />
-            <path class="wv-pilot" d="M-45-17v-53h26M20-70h42v53" />
-            <circle class="wv-pilot-node" cx="62" cy="-70" r="9" />
+            <!-- Tubería base (solid fill instead of thick stroke) -->
+            <path fill="#6c8f88" d="M-90-6h56v12h-56zM34-6h56v12h-56z" />
+            <!-- Bridas (Flanges) -->
+            <rect fill="#4e726b" x="-38" y="-12" width="6" height="24" rx="2" />
+            <rect fill="#4e726b" x="32" y="-12" width="6" height="24" rx="2" />
+            
+            <!-- Cuerpo de la Válvula -->
+            <path class="wv-body" d="M-32-22 L32 22 L32-22 L-32 22 Z" stroke-linejoin="round"/>
+            <circle class="wv-body" cx="0" cy="0" r="10" />
+
+            <!-- Vástago (Stem) -->
+            <rect fill="#3f6761" x="-2" y="-55" width="4" height="33" />
+            
+            <!-- Posicionador (Positioner box) -->
+            <rect fill="#a5c4b8" stroke="#3f6761" stroke-width="2" x="2" y="-40" width="16" height="18" rx="2" />
+            <circle fill="#3f6761" cx="10" cy="-31" r="3" />
+            
+            <!-- Actuador de Diafragma (Diaphragm) -->
+            <path class="wv-actuator" d="M-38-55 Q0-85 38-55 L34-45 H-34 Z" stroke-linejoin="round"/>
+            <!-- Detalle central del actuador -->
+            <rect fill="#c4d8ce" x="-34" y="-55" width="68" height="4" />
           </g>
           <g class="world-tank" id="water-asset-tank">
             <path class="wt-bowl" d="M-82-78H82L64-14C59 5 43 16 22 16h-44c-21 0-37-11-42-30z" />
@@ -111,6 +126,13 @@
         <path class="world-hill near" fill="url(#worldHillB)" d="M0 525c156-105 282-57 386-158 99-96 197-52 284 42 96 104 196 85 306-8 119-101 267-55 464 72v285H0Z"/>
         <path class="world-river" fill="url(#worldWater)" d="M0 661C179 603 293 650 433 679c142 30 259-9 371 25 112 34 176 100 293 96 118-4 198-69 343-50v180c-171-22-262 58-390 52-137-7-200-76-310-99-111-24-218 11-347-18C257 834 146 796 0 847Z"/>
         <path class="world-river-light" d="M-10 717c179-54 306 18 444 25 159 8 244-28 367 25 119 51 191 77 306 54 112-22 208-37 343-12"/>
+        <g class="world-birds">
+          <g class="bird-group">
+            <path class="bird" d="M0 8 Q 4 0 8 8 Q 12 0 16 8" fill="none" stroke="#2b756e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path class="bird" d="M25 15 Q 29 7 33 15 Q 37 7 41 15" fill="none" stroke="#2b756e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path class="bird" d="M12 28 Q 16 20 20 28 Q 24 20 28 28" fill="none" stroke="#2b756e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+        </g>
         <!-- CONTINUOUS CONDUIT / narrative spine -->
         <path class="world-pipe shadow" d="M1090 785C1190 880 1168 1035 1034 1118S862 1282 920 1420s175 192 144 350-190 187-209 345 140 219 112 380-180 188-167 360 156 210 128 371-169 190-152 371"/>
         <path class="world-pipe base" d="M1090 785C1190 880 1168 1035 1034 1118S862 1282 920 1420s175 192 144 350-190 187-209 345 140 219 112 380-180 188-167 360 156 210 128 371-169 190-152 371"/>
@@ -137,18 +159,7 @@
             IMPULSIÓN · BOMBAS EN PARALELO
           </text>
         </g>
-        <!-- industrial control valve integrated on spine -->
-        <g class="world-valve" transform="translate(908 1600)">
-          <path class="wv-pipe" d="M-82 0h50M32 0h74"/>
-          <path class="wv-body" d="M-34-28L0 0l-34 28h68L0 0l34-28z"/>
-          <path class="wv-stem" d="M0-28v-39"/>
-          <rect class="wv-actuator" x="-31" y="-91" width="62" height="25" rx="9"/>
-          <path class="wv-pilot" d="M-45-17v-53h26M20-70h42v53"/>
-          <circle class="wv-pilot-node" cx="62" cy="-70" r="9"/>
-          <text x="0" y="55" text-anchor="middle">
-            CONTROL HIDRÁULICO
-          </text>
-        </g>
+
         <!-- elevated storage as spatial transition -->
         <g class="world-tank" transform="translate(1005 1980)" filter="url(#worldSoft)">
           <path class="wt-bowl" d="M-82-78H82L64-14C59 5 43 16 22 16h-44c-21 0-37-11-42-30z"/>
