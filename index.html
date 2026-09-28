@@ -182,72 +182,108 @@
             <path class="wp-control" d="M-25 19L0 36l25-17L0 2z" />
           </g>
           <g class="world-dma" id="water-asset-network">
-            <!-- Límite de Sector (District Boundary) -->
-            <path class="wd-boundary" d="M720 2740l252-95 325 102 65 376-284 161-341-135z" />
-            
-            <!-- Zonas de Presión / Subdivisiones Hidráulicas (Zoning map) -->
-            <path fill="rgba(62,151,141,0.03)" d="M820 2700 H970 V2860 H820 Z" />
-            <path fill="rgba(62,151,141,0.05)" d="M970 2860 H1135 V3100 H970 Z" />
-            <path fill="rgba(62,151,141,0.02)" d="M750 2860 H820 V3050 H750 Z" />
-
-            <!-- Red de Calles Urbanas (Urban Grid Base) -->
-            <path class="wd-street" d="M750 2860H1280 M820 2700V3050 M970 2680V3150 M1135 2720V3100 M820 2950H970 M970 2780H1135 M1135 2950H1250" />
-            
-            <!-- Red de Tuberías Matrices (Water Mains) -->
-            <path class="wd-network" d="M750 2860H1280 M820 2700V3050 M970 2680V3150 M1135 2720V3100 M820 2950H970 M970 2780H1135 M1135 2950H1250" />
-            
-            <!-- Flujo Hídrico Dinámico (Fluid Dynamics Simulation) -->
-            <path class="wd-flow" d="M750 2860H1280 M820 2700V3050 M970 2680V3150 M1135 2720V3100 M820 2950H970 M970 2780H1135 M1135 2950H1250" />
-            
-            <!-- Flujos Secundarios Rápidos (Ramas de alto consumo) -->
-            <path class="wd-flow" style="animation-duration: 0.8s; stroke-width: 1.5; stroke: #6bf0a6;" d="M820 2860 V3050 M970 2860 H1135 M1135 2860 V3100" />
-
-            <!-- Urbanización (Edificios, Industria y Residencial) -->
-            <g class="wd-houses">
-              <!-- Zona Residencial Norte (Techos a dos aguas) -->
-              <path d="M850 2810l15-12 15 12v22h-30z" />
-              <path d="M885 2810l15-12 15 12v22h-30z" />
-              <path d="M1015 2735l15-12 15 12v22h-30z" />
-              <path d="M1060 2735l15-12 15 12v22h-30z" />
-              
-              <!-- Zona Comercial / Alta Densidad (Bloques cuadrados) -->
-              <path d="M760 2750 h35 v60 h-35 z" />
-              <path d="M880 2990 h60 v40 h-60 z" />
-              <path d="M1000 2890 h40 v70 h-40 z" />
-              <path d="M1060 2890 h40 v50 h-40 z" />
-              <path d="M1170 2780 h50 v40 h-50 z" />
-              <path d="M1170 2840 h50 v15 h-50 z" />
-              
-              <!-- Zona Industrial / Crítica (Formas complejas) -->
-              <path d="M1170 3000 h60 v-30 h-20 v-15 h-40 z" />
-              <path d="M850 2700 h50 v20 h-50 z M860 2690 h30 v10 h-30 z" />
+            <!-- Boundary -->
+            <path class="wd-boundary" fill="rgba(62,151,141,0.05)" stroke="#3aa39f" stroke-dasharray="10 10" stroke-width="2" d="M720 2740l252-95 325 102 65 376-284 161-341-135z" />
+            <path stroke="#587c79" stroke-width="36" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M730 2860 H1240 M820 2710 H1200 M820 3010 H1200 M820 2710 V3120 M970 2620 V3120 M1120 2710 V3060" />
+            <path stroke="#a4c3c0" stroke-width="2" stroke-dasharray="8 12" stroke-linecap="round" fill="none" d="M730 2860 H1240 M820 2710 H1200 M820 3010 H1200 M820 2710 V3120 M970 2620 V3120 M1120 2710 V3060" />
+            <path stroke="#d8e5df" stroke-width="2" stroke-dasharray="2 4" fill="none" d="M805 2848 h30 M805 2854 h30 M805 2860 h30 M805 2866 h30 M805 2872 h30 M958 2845 v30 M964 2845 v30 M970 2845 v30 M976 2845 v30 M982 2845 v30 M958 2995 v30 M964 2995 v30 M970 2995 v30 M976 2995 v30 M982 2995 v30 M1108 2845 v30 M1114 2845 v30 M1120 2845 v30 M1126 2845 v30 M1132 2845 v30" />
+            <g class="wd-houses-complex">
+            <path stroke="#1c3e3b" stroke-width="2" stroke-linejoin="round" fill="#a4c3c0" d="M840 2740 h105 v95 h-105 Z" />
+            <path stroke="#1c3e3b" stroke-width="2" stroke-linejoin="round" fill="#8baea9" d="M850 2730 h85 v10 h-85 Z" />
+            <path stroke="#1c3e3b" stroke-width="2" stroke-linejoin="round" fill="#d8e5df" d="M870 2720 h45 v10 h-45 Z" />
+            <path stroke="#1c3e3b" stroke-width="4" stroke-dasharray="10 5" fill="none" d="M850 2755 h85" />
+            <path stroke="#1c3e3b" stroke-width="4" stroke-dasharray="10 5" fill="none" d="M850 2770 h85" />
+            <path stroke="#1c3e3b" stroke-width="4" stroke-dasharray="10 5" fill="none" d="M850 2785 h85" />
+            <path stroke="#1c3e3b" stroke-width="4" stroke-dasharray="10 5" fill="none" d="M850 2800 h85" />
+            <path stroke="#1c3e3b" stroke-width="4" stroke-dasharray="10 5" fill="none" d="M850 2815 h85" />
+            <path stroke="#1c3e3b" stroke-width="2" stroke-linejoin="round" fill="#8baea9" d="M995 2760 h40 v30 h-40 Z" />
+            <path stroke="#1c3e3b" stroke-width="2" stroke-linejoin="round" fill="#d8e5df" d="M990 2760 L1015 2740 L1040 2760 Z" />
+            <path stroke="#1c3e3b" stroke-width="2" stroke-linejoin="round" fill="#6bf0a6" stroke-width="1.5" d="M1001 2770 h10 v10 h-10 Z" />
+            <path stroke="#1c3e3b" stroke-width="2" stroke-linejoin="round" fill="#6bf0a6" stroke-width="1.5" d="M1019 2770 h10 v10 h-10 Z" />
+            <path stroke="#1c3e3b" stroke-width="2" stroke-linejoin="round" fill="#8baea9" d="M995 2815 h40 v30 h-40 Z" />
+            <path stroke="#1c3e3b" stroke-width="2" stroke-linejoin="round" fill="#d8e5df" d="M990 2815 L1015 2795 L1040 2815 Z" />
+            <path stroke="#1c3e3b" stroke-width="2" stroke-linejoin="round" fill="#6bf0a6" stroke-width="1.5" d="M1001 2825 h10 v10 h-10 Z" />
+            <path stroke="#1c3e3b" stroke-width="2" stroke-linejoin="round" fill="#6bf0a6" stroke-width="1.5" d="M1019 2825 h10 v10 h-10 Z" />
+            <path stroke="#1c3e3b" stroke-width="2" stroke-linejoin="round" fill="#8baea9" d="M1050 2760 h40 v30 h-40 Z" />
+            <path stroke="#1c3e3b" stroke-width="2" stroke-linejoin="round" fill="#d8e5df" d="M1045 2760 L1070 2740 L1095 2760 Z" />
+            <path stroke="#1c3e3b" stroke-width="2" stroke-linejoin="round" fill="#6bf0a6" stroke-width="1.5" d="M1056 2770 h10 v10 h-10 Z" />
+            <path stroke="#1c3e3b" stroke-width="2" stroke-linejoin="round" fill="#6bf0a6" stroke-width="1.5" d="M1074 2770 h10 v10 h-10 Z" />
+            <path stroke="#1c3e3b" stroke-width="2" stroke-linejoin="round" fill="#8baea9" d="M1050 2815 h40 v30 h-40 Z" />
+            <path stroke="#1c3e3b" stroke-width="2" stroke-linejoin="round" fill="#d8e5df" d="M1045 2815 L1070 2795 L1095 2815 Z" />
+            <path stroke="#1c3e3b" stroke-width="2" stroke-linejoin="round" fill="#6bf0a6" stroke-width="1.5" d="M1056 2825 h10 v10 h-10 Z" />
+            <path stroke="#1c3e3b" stroke-width="2" stroke-linejoin="round" fill="#6bf0a6" stroke-width="1.5" d="M1074 2825 h10 v10 h-10 Z" />
+            <path stroke="#1c3e3b" stroke-width="2" stroke-linejoin="round" fill="#6bf0a6" d="M840 2880 h105 v105 h-105 Z" />
+            <path stroke="#a4c3c0" stroke-width="12" fill="none" d="M840 2932 h105 M892 2880 v105 M840 2880 L945 2985 M945 2880 L840 2985" />
+            <circle cx="860" cy="2905" r="6" fill="#2a6f68" stroke="#1c3e3b" stroke-width="1.5" />
+            <circle cx="920" cy="2905" r="6" fill="#2a6f68" stroke="#1c3e3b" stroke-width="1.5" />
+            <circle cx="860" cy="2960" r="6" fill="#2a6f68" stroke="#1c3e3b" stroke-width="1.5" />
+            <circle cx="920" cy="2960" r="6" fill="#2a6f68" stroke="#1c3e3b" stroke-width="1.5" />
+            <circle cx="875" cy="2945" r="6" fill="#2a6f68" stroke="#1c3e3b" stroke-width="1.5" />
+            <circle cx="910" cy="2920" r="6" fill="#2a6f68" stroke="#1c3e3b" stroke-width="1.5" />
+            <path stroke="#1c3e3b" stroke-width="2" stroke-linejoin="round" fill="#8baea9" d="M990 2880 h45 v115 h-45 Z" />
+            <path stroke="#1c3e3b" stroke-width="2" stroke-linejoin="round" fill="#d8e5df" d="M995 2870 h35 v10 h-35 Z" />
+            <path stroke="#1c3e3b" stroke-width="3" stroke-dasharray="6 2" fill="none" d="M995 2890 h35" />
+            <path stroke="#1c3e3b" stroke-width="3" stroke-dasharray="6 2" fill="none" d="M995 2898 h35" />
+            <path stroke="#1c3e3b" stroke-width="3" stroke-dasharray="6 2" fill="none" d="M995 2906 h35" />
+            <path stroke="#1c3e3b" stroke-width="3" stroke-dasharray="6 2" fill="none" d="M995 2914 h35" />
+            <path stroke="#1c3e3b" stroke-width="3" stroke-dasharray="6 2" fill="none" d="M995 2922 h35" />
+            <path stroke="#1c3e3b" stroke-width="3" stroke-dasharray="6 2" fill="none" d="M995 2930 h35" />
+            <path stroke="#1c3e3b" stroke-width="3" stroke-dasharray="6 2" fill="none" d="M995 2938 h35" />
+            <path stroke="#1c3e3b" stroke-width="3" stroke-dasharray="6 2" fill="none" d="M995 2946 h35" />
+            <path stroke="#1c3e3b" stroke-width="3" stroke-dasharray="6 2" fill="none" d="M995 2954 h35" />
+            <path stroke="#1c3e3b" stroke-width="3" stroke-dasharray="6 2" fill="none" d="M995 2962 h35" />
+            <path stroke="#1c3e3b" stroke-width="3" stroke-dasharray="6 2" fill="none" d="M995 2970 h35" />
+            <path stroke="#1c3e3b" stroke-width="3" stroke-dasharray="6 2" fill="none" d="M995 2978 h35" />
+            <path stroke="#1c3e3b" stroke-width="2" stroke-linejoin="round" fill="#a4c3c0" d="M1050 2890 h45 v105 h-45 Z" />
+            <path stroke="#1c3e3b" stroke-width="2" stroke-linejoin="round" fill="#d8e5df" d="M1055 2880 h35 v10 h-35 Z" />
+            <path stroke="#1c3e3b" stroke-width="3" stroke-dasharray="6 2" fill="none" d="M1055 2900 h35" />
+            <path stroke="#1c3e3b" stroke-width="3" stroke-dasharray="6 2" fill="none" d="M1055 2908 h35" />
+            <path stroke="#1c3e3b" stroke-width="3" stroke-dasharray="6 2" fill="none" d="M1055 2916 h35" />
+            <path stroke="#1c3e3b" stroke-width="3" stroke-dasharray="6 2" fill="none" d="M1055 2924 h35" />
+            <path stroke="#1c3e3b" stroke-width="3" stroke-dasharray="6 2" fill="none" d="M1055 2932 h35" />
+            <path stroke="#1c3e3b" stroke-width="3" stroke-dasharray="6 2" fill="none" d="M1055 2940 h35" />
+            <path stroke="#1c3e3b" stroke-width="3" stroke-dasharray="6 2" fill="none" d="M1055 2948 h35" />
+            <path stroke="#1c3e3b" stroke-width="3" stroke-dasharray="6 2" fill="none" d="M1055 2956 h35" />
+            <path stroke="#1c3e3b" stroke-width="3" stroke-dasharray="6 2" fill="none" d="M1055 2964 h35" />
+            <path stroke="#1c3e3b" stroke-width="3" stroke-dasharray="6 2" fill="none" d="M1055 2972 h35" />
+            <path stroke="#1c3e3b" stroke-width="3" stroke-dasharray="6 2" fill="none" d="M1055 2980 h35" />
+            <path stroke="#1c3e3b" stroke-width="2" stroke-linejoin="round" fill="#d8e5df" d="M840 3035 h105 v60 h-105 Z" />
+            <path stroke="#1c3e3b" stroke-width="2" stroke-linejoin="round" fill="#8baea9" d="M850 3025 h85 v10 h-85 Z" />
+            <path stroke="#1c3e3b" stroke-width="4" stroke-dasharray="10 5" fill="none" d="M850 3050 h85" />
+            <path stroke="#1c3e3b" stroke-width="4" stroke-dasharray="10 5" fill="none" d="M850 3060 h85" />
+            <path stroke="#1c3e3b" stroke-width="4" stroke-dasharray="10 5" fill="none" d="M850 3070 h85" />
+            <path stroke="#1c3e3b" stroke-width="4" stroke-dasharray="10 5" fill="none" d="M850 3080 h85" />
+            <path stroke="#1c3e3b" stroke-width="2" stroke-linejoin="round" fill="#a4c3c0" d="M1010 3035 h85 v65 h-40 v-35 h-45 z" />
+            <path stroke="#1c3e3b" stroke-width="2" stroke-linejoin="round" fill="#8baea9" d="M1020 3045 h35 v15 h-35 Z" />
             </g>
-
-            <!-- Nodos IoT y Medidores Inteligentes (Smart Meters) -->
-            <g class="wd-meters">
-              <!-- Nodos Principales de Cruce (Válvulas reguladoras) -->
-              <circle cx="820" cy="2860" r="10" />
-              <circle cx="970" cy="2860" r="14" fill="#fff" stroke="#3aa39f" stroke-width="4" />
-              <circle cx="1135" cy="2860" r="10" />
-              
-              <!-- Medidores Secundarios (Sub-sectores) -->
-              <circle cx="820" cy="2950" r="7" />
-              <circle cx="970" cy="2950" r="7" />
-              <circle cx="970" cy="2780" r="7" />
-              <circle cx="1135" cy="2780" r="7" />
-              <circle cx="1135" cy="2950" r="7" />
-              
-              <!-- Micro-sensores en puntos ciegos -->
-              <circle cx="820" cy="2700" r="4" fill="#6bf0a6" />
-              <circle cx="970" cy="3150" r="4" fill="#6bf0a6" />
-              <circle cx="1280" cy="2860" r="4" fill="#ff6b76" />
+            <!-- Tuberias matrices -->
+            <path stroke="#6bf0a6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M730 2860 H1240 M820 2710 H1200 M820 3010 H1200 M820 2710 V3120 M970 2620 V3120 M1120 2710 V3060" />
+            <path class="pipe-flow-anim" stroke="#fff" stroke-width="2" stroke-dasharray="8 12" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M730 2860 H1240 M820 2710 H1200 M820 3010 H1200 M820 2710 V3120 M970 2620 V3120 M1120 2710 V3060" />
+            <!-- Nodos -->
+            <g stroke="#6bf0a6" stroke-width="3" fill="#fff">
+            <circle cx="970" cy="2860" r="14" />
+            <circle cx="820" cy="2860" r="10" />
+            <circle cx="1120" cy="2860" r="10" />
+            <circle cx="820" cy="2710" r="8" />
+            <circle cx="970" cy="2710" r="8" />
+            <circle cx="1120" cy="2710" r="8" />
+            <circle cx="820" cy="3010" r="8" />
+            <circle cx="970" cy="3010" r="8" />
+            <circle cx="1120" cy="3010" r="8" />
+            <circle cx="730" cy="2860" r="6" />
+            <circle cx="1240" cy="2860" r="6" />
+            <circle cx="1200" cy="2710" r="6" />
+            <circle cx="1200" cy="3010" r="6" />
+            <circle cx="970" cy="2620" r="6" />
+            <circle cx="820" cy="3120" r="6" />
+            <circle cx="970" cy="3120" r="6" />
+            <circle cx="1120" cy="3060" r="6" />
             </g>
-
-            <!-- Telemetría Inalámbrica (Ondas IoT animadas) -->
-            <circle class="wd-pulse" cx="970" cy="2860" r="32" />
-            <circle class="wd-pulse" cx="970" cy="2860" r="16" style="animation-delay: 0.8s" />
-            <circle class="wd-pulse" cx="820" cy="2950" r="20" style="animation-delay: 0.4s" />
-            <circle class="wd-pulse" cx="1135" cy="2780" r="20" style="animation-delay: 1.2s" />
+            <!-- Pulses -->
+            <circle class="wd-pulse" stroke="#6bf0a6" stroke-width="2" fill="none" cx="970" cy="2860" r="32" />
+            <circle class="wd-pulse" stroke="#6bf0a6" stroke-width="1" fill="none" cx="970" cy="2860" r="16" style="animation-delay: 0.8s" />
+            <circle class="wd-pulse" stroke="#a0dacd" stroke-width="1.5" fill="none" cx="1120" cy="2860" r="20" style="animation-delay: 0.5s" />
+            <circle class="wd-pulse" stroke="#a0dacd" stroke-width="1.5" fill="none" cx="820" cy="2860" r="20" style="animation-delay: 1.2s" />
           </g>
           <g class="world-telemetry" id="water-asset-telemetry">
             <path d="M0 80V0M-13 80h26" />
