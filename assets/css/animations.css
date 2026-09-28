@@ -490,3 +490,6 @@
 .valve-core-anim { animation: corePulse 4s ease-in-out infinite; }
 .positioner-led { animation: signal 2s steps(2) infinite; }
 .signal-line { animation: worldFlow 2s linear infinite; }
+
+.valve-wheel-spin { animation: spinValve 4s linear infinite; }
+@keyframes spinValve { 0% { transform: rotateY(0deg); } 100% { transform: rotateY(360deg); } }
