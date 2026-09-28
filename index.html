@@ -39,19 +39,75 @@
             <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#174b48" flood-opacity=".11"/>
           </filter>
           <g class="world-station" id="water-asset-pump">
-            <path class="station-shell" d="M-108 5h216v118h-216z" />
-            <path class="station-roof" d="M-122 5l44-34H80l42 34" />
-            <g class="world-pump" transform="translate(-45 65)">
-              <circle r="30" />
-              <circle class="world-impeller" r="16" />
-              <path d="M-14 0h28M0-14v28" />
+            <!-- Bases de los tanques -->
+            <path class="station-roof" d="M-90 85 H-10 V130 H-90 Z" />
+            <path class="station-roof" d="M10 85 H90 V130 H10 Z" />
+
+            <!-- Tanques Principales (Presurizadores Gemelos) -->
+            <circle class="station-shell" cx="-50" cy="35" r="55" />
+            <circle class="station-shell" cx="50" cy="35" r="55" />
+            
+            <!-- Detalles estructurales de los tanques (líneas concéntricas de soldadura) -->
+            <circle cx="-50" cy="35" r="45" fill="none" stroke="#91bab0" stroke-width="1.5" opacity="0.6" />
+            <circle cx="50" cy="35" r="45" fill="none" stroke="#91bab0" stroke-width="1.5" opacity="0.6" />
+            <circle cx="-50" cy="35" r="35" fill="none" stroke="#91bab0" stroke-width="1" opacity="0.3" />
+            <circle cx="50" cy="35" r="35" fill="none" stroke="#91bab0" stroke-width="1" opacity="0.3" />
+
+            <!-- Cabezal inferior (Succión principal) -->
+            <path class="wv-pipe" d="M-120 120 H130" />
+            <path stroke="#a0dacd" stroke-width="2" stroke-dasharray="8 6" fill="none" class="pipe-flow-anim" d="M-120 120 H130" />
+
+            <!-- Tuberías ascendentes (Forma de bastón realista) -->
+            <!-- Tubo Izquierdo -->
+            <path class="wv-pipe" fill="none" d="M-80 120 V-15 Q-80 -30 -65 -30 Q-50 -30 -50 -15 V35" />
+            <path stroke="#a0dacd" stroke-width="2" stroke-dasharray="8 6" fill="none" class="pipe-flow-anim" d="M-80 120 V-15 Q-80 -30 -65 -30 Q-50 -30 -50 -15 V35" />
+            
+            <!-- Tubo Derecho -->
+            <path class="wv-pipe" fill="none" d="M20 120 V-15 Q20 -30 35 -30 Q50 -30 50 -15 V35" />
+            <path stroke="#a0dacd" stroke-width="2" stroke-dasharray="8 6" fill="none" class="pipe-flow-anim" d="M20 120 V-15 Q20 -30 35 -30 Q50 -30 50 -15 V35" />
+
+            <!-- Flanches/Bridas de las tuberías -->
+            <rect fill="#5e7e77" x="-86" y="112" width="12" height="4" rx="1" />
+            <rect fill="#5e7e77" x="14" y="112" width="12" height="4" rx="1" />
+
+            <!-- Motores / Bombas en el centro de los tanques -->
+            <g class="world-pump" transform="translate(-50 35)">
+              <circle r="22" />
+              <circle class="world-impeller" r="12" />
+              <path d="M-10 0h20M0-10v20" />
             </g>
-            <g class="world-pump" transform="translate(35 65)">
-              <circle r="30" />
-              <circle class="world-impeller reverse" r="16" />
-              <path d="M-14 0h28M0-14v28" />
+            <g class="world-pump" transform="translate(50 35)">
+              <circle r="22" />
+              <circle class="world-impeller reverse" r="12" />
+              <path d="M-10 0h20M0-10v20" />
             </g>
-            <path class="station-header" d="M-45 95v35h80V95M35 130h88" />
+
+            <!-- Cajas de Control (Paneles eléctricos detallados) -->
+            <g transform="translate(-32, 60)">
+              <rect fill="#d6eadd" stroke="#5e7e77" stroke-width="1.5" x="0" y="0" width="16" height="24" rx="2" />
+              <!-- LEDs y Botones animados -->
+              <circle class="positioner-led" fill="#6bf0a6" cx="5" cy="5" r="1.5" />
+              <circle fill="#ff6b76" cx="11" cy="5" r="1.5" />
+              <rect fill="#91bab0" x="4" y="10" width="8" height="2" />
+              <rect fill="#91bab0" x="4" y="14" width="8" height="2" />
+              <rect fill="#91bab0" x="4" y="18" width="8" height="2" />
+            </g>
+
+            <g transform="translate(68, 60)">
+              <rect fill="#d6eadd" stroke="#5e7e77" stroke-width="1.5" x="0" y="0" width="16" height="24" rx="2" />
+              <circle class="positioner-led" fill="#6bf0a6" cx="5" cy="5" r="1.5" />
+              <circle fill="#ff6b76" cx="11" cy="5" r="1.5" />
+              <rect fill="#91bab0" x="4" y="10" width="8" height="2" />
+              <rect fill="#91bab0" x="4" y="14" width="8" height="2" />
+              <rect fill="#91bab0" x="4" y="18" width="8" height="2" />
+            </g>
+            
+            <!-- Salida Lateral (Impulsión final hacia el siguiente nodo) -->
+            <path class="wv-pipe" fill="none" d="M-50 35 H0" />
+            <path class="wv-pipe" fill="none" d="M50 35 H120" />
+            <!-- Flujo de impulsión -->
+            <path stroke="#a0dacd" stroke-width="2" stroke-dasharray="8 6" fill="none" class="pipe-flow-anim" d="M-50 35 H0" />
+            <path stroke="#a0dacd" stroke-width="2" stroke-dasharray="8 6" fill="none" class="pipe-flow-anim" d="M50 35 H120" />
           </g>
           <g class="world-valve" id="water-asset-valve">
             <!-- Tuberías gruesas (estilo original) -->
